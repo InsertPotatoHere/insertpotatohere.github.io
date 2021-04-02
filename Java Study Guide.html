@@ -1,0 +1,2611 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-right: 10px;
+    background: #333;
+    color: #DDD;
+}
+.hljs{
+    background: #222;
+    color: #FFFFFF !important;
+    padding-left: 15px !important;
+    display:block;
+    overflow-x:auto;
+}
+.hljs-keyword{
+    color: orange !important;
+}
+.hljs-number{
+    color: lightblue !important;
+}
+.hljs-string{
+    color: lightgreen !important;
+}
+.hljs-title{
+    color: rgb(253, 230, 54) !important;
+}
+.hljs-subst{
+    color:#444
+}
+.hljs-comment{
+    color:#888
+}
+.hljs-title,.hljs-attribute,.hljs-doctag,.hljs-keyword,.hljs-meta-keyword,.hljs-name,.hljs-selector-tag{
+    font-weight:700
+}
+.hljs-deletion,.hljs-quote,.hljs-selector-class,.hljs-selector-id,.hljs-template-tag,.hljs-type{
+    color:#800
+}
+.hljs-section{
+    color:#800;
+    font-weight:700
+}
+.hljs-link,.hljs-regexp,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-symbol,.hljs-template-variable,.hljs-variable{
+    color:#bc6060
+}
+.hljs-literal{
+    color:#78a960
+}
+.hljs-addition,.hljs-built_in,.hljs-bullet,.hljs-code{
+    color:#397300
+}
+.hljs-meta{
+    color:#1f7199
+}
+.hljs-meta-string{
+    color:#4d99bf
+}
+.hljs-emphasis{
+    font-style:italic
+}
+.hljs-strong{
+    font-weight:700
+}
+.inlinecode{
+    display: inline;
+    color: #DDD;
+    background: #111 !important;
+    font-family: 'Consolas'; 
+    padding-left: 6px;
+    padding-right: 6px;
+}
+highlight{
+    background-color: yellow;
+}
+sb{
+    color: red;
+    font-weight: 600;
+}
+u{
+    text-decoration: underline;
+}
+.divider{
+    margin: 50px 0px 50px 0px;
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+h1{
+    text-align: center;
+    font-size: 70px;
+}
+ol{
+    padding: 0px;
+}
+a{
+    color: white;
+    text-decoration: None;
+}
+h3{
+    font-size: 20px;
+}
+</style>
+   <script>document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((block) => {
+          hljs.highlightElement(block);
+        });
+      });</script>
+</head>
+<>
+    <h1>Java Study Guide</h1>
+    <h2 style="margin-left: 10px">Table of contents (Click on them to jump to that section)</h2>
+    <a name="Top"></a>
+    <ol>
+        <ul><a href="#Keywords"><b>All Vocabulary and Definitions</b></a></ul>
+        <ul>
+            <a href="#Variables"><b>Variables and Data Types</b></a>
+            <ol>
+                <ul><a href="#int">Integers</a></ul>
+                <ul><a href="#float">Decimal numbers</a></ul>
+                <ul><a href="#char">Characters</a></ul>
+                <ul><a href="#String">String</a></ul>
+                <ul><a href="#boolean">Boolean</a></ul>
+                <ul><a href="#object">Object</a></ul>
+                <ul><a href="#operations"><sb>Math Operations and Solving Skills</sb></a></ul>
+                <ul><a href="#casting"><sb>Type Casting/Converting</sb></a></ul>
+                <ul><a href="#constant">Constants</a></ul>
+                <ul><a href="#random">Random</a></ul>
+            </ol>
+        </ul>
+        <ul>
+            <a href="#Conditional"><b>If Statements (Conditional Statements)</b></a>
+            <ol>
+                <ul><a href="#ifsimple">Simple Statement</a></ul>
+                <ul><a href="#logic"><sb>Logical Operators</sb></a></ul>
+                <ul><a href="#combine"><sb>Combining Statements</sb></a></ul>
+                <ul><a href="#invert">Inverting</a></ul>
+            </ol>
+        </ul>
+        <ul>
+            <a href="#Loops"><b>For, While, Do-While loops</b></a>
+            <ol>
+                <ul><a href="#loopsyntax"><sb>Syntax</sb></a>
+                    <ul><a href="#forloop"><sb>For Loop</sb></a></ul>
+                    <ul><a href="#foreachloop">For-Each Loop</a></ul>
+                    <ul><a href="#whileloop">While Loop</a></ul>
+                    <ul><a href="#dowhileloop">Do-While Loop</a></ul>
+                </ul>
+                <ul><a href="#which">Which to use and when</a></ul>
+                <ul><a href="#nesting">Nesting Loops</a></ul>
+            </ol>
+        </ul>
+        <ul>
+            <a href="#Arrays"><b>Primitive Arrays</b></a>
+            <ol>
+                <ul><a href="#arraysyntax">Syntax</a></ul>
+                <ul><a href="#arrayusage">Usage</a></ul>
+            </ol>
+        </ul>
+        <ul>
+            <a href="#ArrayList"><b>ArrayList</b></a>
+            <ol>
+                <ul><a href="#arraylistsyntax">Syntax</a></ul>
+                <ul><a href="#functions">ArrayList Functions</a></ul>
+                <ul><a href="#arraylistusage">Usage</a></ul>
+            </ol>
+        </ul>
+        <ul>
+            <a href="#Functions"><b>Functions and Methods</b></a><br>
+            <ol>
+                <ul><a href="#functions">Syntax</a></ul>
+                <ul><a href="#arguments">Arguments/Parameters</a></ul>
+                <ul><a href="#return">Return</a></ul>
+                <ul><a href="#overloading">Overloading</a></ul>
+                <ul><a href="#exceptions">Exceptions</a></ul>
+                <ul><a href="#recursion">Recursion</a></ul>
+            </ol>
+        </ul>
+        <ul>
+            <a href="#Class"><sb>Classes</sb></a><br>
+            <ol>
+                <ul><a href="#basicclass">Basic Class Structure</a></ul>
+                <ul><a href="#publicprivate">Public, Private, and Protected Variables and Functions</a></ul>
+                <ul><a href="#constructor">Constructors</a></ul>
+                <ul><a href="#static">Static</a></ul>
+                <ul><a href="#this">This.</a></ul>
+                <ul><a href="#dot">The '.'</a></ul>
+                <ul><a href="#override">Overriding</a></ul>
+            </ol>
+        </ul>
+        <ul>
+            <a href="#Poly"><b>Inheritence and Polymophism</b></a>
+            <ol>
+                <ul><a href="#extend">Extends</a></ul>
+                <ul><a href="#super">Super</a></ul>
+                <ul><a href="#abstract">Abstract</a></ul>
+                <ul><a href="#interface">Interface and Implements</a></ul>
+            </ol>
+        </ul>
+        <ul>
+            <a href="#Others"><b>Others</b></a>
+            <ol>
+                <ul><a href="#binary">Binary</a></ul>
+                <ul><a href="#hexadecimal">Hexadecimal</a></ul>
+            </ol>
+        </ul>
+    </ol>
+
+    <div class="divider"></div>
+
+    <a name="Keywords"></a>
+    <div style="margin-left: 10px;">
+        <h2>Vocabulary and Key Words</h2>
+        <h4>If you want to know how a keyword is used, use Ctrl-F or Cmd-F to look for it in this website</h4>
+        <p>
+            <div><b><a name="abstractdef"></a>Abstract: </b>A modifier used to indicate that this function will be implemented later. Think of this as "Incomplete" instead.</div>
+            <div><b><a name="arraydef"></a>Array: </b>A group of elements stored into a single variable
+            <div><b><a name="argumentdef"></a>Argument: </b>Variables in the function used to specify input. Ex: <div class="inlinecode">public void test(<b>int argument1, String argument2: </b>)</div></div>
+            <div></div><b><a name="booleandef"></a>Boolean: </b>Either true or false</div>
+            <div><b><a name="breakdef"></a>Break: </b>Used to terminate any loop including for loops, while loops, and do-while loops</div>
+            <div><b><a name="bytedef"></a>Byte: </b>A 8-bit (1 byte) number representing integers from -127 to 128</div>
+            <div><b><a name="casedef"></a>Case: </b>Used in a switch statement to specify which values should the switch statement handle</div>
+            <div><b><a name="castdef"></a>Cast: </b>Convert to a different data type</div>
+            <div><b><a name="catchdef"></a>Catch: </b>Used to handle errors without crashing the program</div>
+            <div><b><a name="characterdef"></a>Character: </b>A single letter, number, or symbol</div>
+            <div><b><a name="classdef"></a>Class: </b>A type of Object used to define variables and methods</div>
+            <div><b><a name="commentdef"></a>Comment: </b>An ignored part of the code often used to describe code for other programmers or yourself in the future</div>
+            <div><b><a name="compilerdef"></a>Compiler: </b>A program used to convert code into a language the computer understands</div>
+            <div><b><a name="constantdef"></a>Constant: </b>A variable whose value can not change</div>
+            <div><b><a name="constructordef"></a>Constructor: </b>A special function in a class that is called whenever an instance of the class is created</div>
+            <div><b><a name="continuedef"></a>Continue: </b>Used to skip the rest of a loop and move onto the next iteration of the loop</div>
+            <div><b><a name="datatypedef"></a>Data Type: </b>A way to specify what binary data represents. Ex: 0xFF can be an integer (byte), or could be a char. A datatype tells us which it is</div>
+            <div><b><a name="declaredef"></a>Declare/Declaration: </b>Used to create a position in computer memory to store/save data for later use</div>
+            <div><b><a name="defaultdef"></a>Default: </b>A statement in a switch-statement that runs if no other case has been reached and terminated with the "break" keyword</div>
+            <div><b><a name="definitiondef"></a>Definition: </b>Assigning a value to a variable stored in memory</div>
+            <div><b><a name="dodef"></a>Do: </b>A type of loop that always runs at least once before terminating</div>
+            <div><b><a name="doubledef"></a>Double: </b>A 64-bit number used to represent decimal numbers</div>
+            <div><b><a name="elsedef"></a>Else: </b>A keyword following an if-statement to run if the condition given in that statement is false</div>
+            <div><b><a name="encapsulatedef"></a>Encapsulate: </b>The process of protecting data by setting variables and fields to private and forcing use of getters/setters to validate data</div>
+            <div><b><a name="exceptiondef"></a>Exception: </b>An unexpected error that occurs in the program</div>
+            <div><b><a name="expressiondef"></a>Expression: </b>A statement that uses operations to perform some computer calculation</div>
+            <div><b><a name="extendsdef"></a>Extends: </b>Used to inherit public class variables and methods</div>
+            <div><b><a name="fielddef"></a>Field: </b>A variable defined in the class but outside the functions in the class. Typically given a "private" visibility modifier</div>
+            <div><b><a name="finaldef"></a>Final: </b>The keyword used to declare a constant</div>
+            <div><b><a name="finallydef"></a>Finally: </b>Used in a try-catch statement to say we want to run this if it crashes or not. In example, program logs should be written to document events, even if the program crashes</div>
+            <div><b><a name="floatdef"></a>Float: </b>A 32-bit number used to represent decimal numbers</div>
+            <div><b><a name="fordef"></a>For: </b>A keyword used to repeat a certain block of code as long as a certain condition is true</div>
+            <div><b><a name="hexdef"></a>Hexidecimal: </b>A Base-16 counting system that makes it easier to represent binary numbers</div>
+            <div><b><a name="ifdef"></a>If: </b>A conditional statement that runs only when the given boolean statement is true</div>
+            <div><b><a name="immutabledef"></a>Immutable: </b>Unable to modify the content, but you are able to read or overwrite the entire variable. Ex: You can not modify a single letter in a string, but you can change the whole String or read a letter</div>
+            <div><b><a name="implementsdef"></a>Implements: </b>Used to specify which interface we want to use</div>
+            <div><b><a name="importdef"></a>Import: </b>Used to add additional features/classes into our Java program. ArrayList is a class we need to import before we can use it</div>
+            <div><b><a name="inheritencedef"></a>Inheritence: </b>The act of using another class' public methods and variables</div>
+            <div><b><a name="intdef"></a>Integer: </b>A positive or negative whole number. An int represents a 32-bit number from -2^31 to 2^31-1</div>
+            <div><b><a name="interfacedef"></a>Interface: </b>Used to specify which functions and declared variables we plan to implement in a class</div>
+            <div><b><a name="iterationdef"></a>Iteration: </b>A single run of a block of code, typically in some looping or recursive function.</div>
+            <div><b><a name="longdef"></a>long: </b>A 64-bit integer that can store numbers from -2^63 to 2^63-1</div>
+            <div><b><a name="maindef"></a>main: </b>The function that Java runs when the program starts</div>
+            <div><b><a name="methoddef"></a>Method: </b>A line of code that groups together a block of code with specific input and output specifications</div>
+            <div><b><a name="nestingdef"></a>Nesting: </b>Putting a statement inside a statement. Typically used in loops to iterate over 2D arrays</div>
+            <div><b><a name="newdef"></a>New: </b>Used to create a new instance of a class in computer memory</div>
+            <div><b><a name="nulldef"></a>Null: </b>Used to represent nothing. Not to be confused with 0 or "", which do actually represent something</div>
+            <div><b><a name="objectdef"></a>Object: </b>The class that encapsulates every data type and class in Java</div>
+            <div><b><a name="oopdef"></a>OOP (Object Oriented Programming): </b>A programming style that focuses on strongly typed data and inheriting functions from classes and objects</div>
+            <div><b><a name="operatordef"></a>Operator: </b>Used to calcaute some value</div>
+            <div><b><a name="overloaddef"></a>Overload: </b>A function/method with the same name, but with different input or different input and ouput</div>
+            <div><b><a name="overridedef"></a>Override: </b>A function that takes overwrites the functionality of a previously implemented function/method</div>
+            <div><b><a name="parameter"></a>Parameter: </b>Like argument, it is the variables used as input for a function. See argument</div>
+            <div><b><a name="primitivedef"></a>Primitive: </b>A basic datatype that is not a class. Ex: int, double, boolean, char, float, etc.</div>
+            <div><b><a name="privatedef"></a>Private: </b>An access modifier that only allows access of this variable only within the class</div>
+            <div><b><a name="protecteddef"></a>Protected: </b>An access modifier that only allows access of this variable only within the same folder as the class it is in</div>
+            <div><b><a name="publicdef"></a>Public: </b>An access modifier that allows access of this variable from anywhere in the program</div>
+            <div><b><a name="recursiondef"></a>Recursion: </b>The process of a function calling itself to break down a problem into smaller, more managable chunks</div>
+            <div><b><a name="returndef"></a>Return: </b>Used to output data and to exit/terminate the function</div>
+            <div><b><a name="scopedef"></a>Scope: </b>Variables and functions that are visible within a specific area of the code</div>
+            <div><b><a name="shortdef"></a>Short: </b>A 16-bit integer that represents numbers from -32,768 - 32,727</div>
+            <div><b><a name="staticdef"></a>Static: </b>A modifier stating a variable belongs to the class, rather than the instances/copies of the class that we create, and is thus shared among every copy of the class</div>
+            <div><b><a name="stringdef"></a>String: </b>An array of characters used to represent words and sentences</div>
+            <div><b><a name="superdef"></a>Super: </b>A keyword used to reference the inherited class it extended</div>
+            <div><b><a name="switchdef"></a>Switch: </b>An alternative to a if-else if-else if-...-else statement used to specify specific values a variable can be and how the statement should handle each one</div>
+            <div><b><a name="thisdef"></a>This: </b>Used to refrence the field variable (class variable), rather than the variable defined in the arguments or the variable defined in the current scope</div>
+            <div><b><a name="throwdef"></a>Throw: </b>Used to cause an excpetion that either causes the program to crash, or if caught, raise an error to handle</div>
+            <div><b><a name="trydef"></a>Try: </b>Used to show that an error is expected to happen within a block of code, and how it should handle the error</div>
+            <div><b><a name="variabledef"></a>Variable: </b>Used to store data in the computer's memory</div>
+            <div><b><a name="voiddef"></a>Void: </b>A return type that specifies nothing should be returned. Not to be confused with Null, since Null can be any data type.</div>
+            <div><b><a name="whiledef"></a>While: </b>A repeating statement that runs as long as the condition given is true</div>
+            
+            <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        </p>
+    </div>
+
+    <div class="divider"></div>
+    <div style="margin-left: 10px">
+        <a name="Variables"></a>
+        <h2>Creating and Using Variables</h2>
+        <p>Variables in Java are a way to store data in computer memory. In Object-Oriented Programming, all variables have some form of datatype. 
+            You can click on any of these to get the definition of what each datatype is on the line at the top of your screen. The datatypes we will most commonly deal with are:</p>
+            <li><a href="#intdef">int</a></li>
+            <li><a href="#longdef">long</a></li>
+            <li><a href="#doubledef">double</a></li>
+            <li><a href="#stringdef">String</a></li>
+            <li><a href="#booleandef">boolean</a></li>
+            <li><a href="#characterdef">char</a></li>
+        <p>While other datatypes also exist that arent used as commonly unless we're working on optimization</p>
+            <li><a href="#bytedef">byte</a></li>
+            <li><a href="#shortdef">short</a></li>
+            <li><a href="#floatdef">float</a></li>
+            <li><a href="#objectdef">Object</a></li>
+        <p>Variables are used in almost every Java program, and will be used for nearly every 
+            problem on the AP Exam. So you will need to know how to effectively create variables.
+            Variables are also given a name. These names typically start with lowercase letters
+            and is typically bad practice to make them uppercase, while numbers give compiler 
+            errors since Java does not allow creating variable names starting with numbers. These
+            variable names help tell us and the computer which value in memory we want to use. <br><br>
+
+            Creating variables always follows this format:
+            <pre><code class="Java">
+datatype variableName = value;   //or
+datatype variableName;           //set to default value
+            </code></pre>
+            <br>
+            Each of those words are placeholders, but you will see later what to put in each
+            spot and how to use it later. For now, we'll start with integers.
+        </p>
+        <h5 style="text-align: left;margin-top: -10px;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        <a name="int"></a>
+        <h3><u>Integers</u></h3>
+        Integers are whole numbers (no decimal points) that are positive or negative. In other 
+        languages, there is also unsigned integers (only positive numbers), but Java does not
+        have this. By design, int stores numbers from -2^31 to 2^31-1. This range isn't 
+        important to remember, but it is important to recognize its limit and when to use another 
+        datatype like long instead. If you are working with big numbers, use long to be safe
+
+         <pre><code class="Java">
+int variable1 = 5;
+int variableWithMultipleWords = -200;
+int unassignedInt; //default value is 0.  
+long bigNumber = 2562345234; //would not work on int
+        </code></pre><br>
+
+         In the last example, we see that 2562345234 is larger than 2^31-1, so an integer is unable 
+         to represent it, so we have to use long. What actually happens when we do int though? We 
+         would experience something called <b>integer overflow</b>, which means it loops back 
+         around to the negatives instead because of how binary works.<br><br>
+
+         0b11111110 = 254<br>
+         0b11111111 = 255<br>
+         0b<highlight><b>1</b></highlight>00000000 = 256? Cant represent the 9th bit, so its ignored <br>
+         0b00000000 = 0<br><br>
+
+        In this example, we loop back to 0 since we were counting only in the positives, but 
+        in reality, this is offset by half the maximum value (128 in this case), so it would 
+        go from 127 to -128. Why the offset by 1? This is since the 0 also needs to be 
+        represented, giving us an odd number of values, and we would rather have a binary 
+        0b10000000 be 0 rather than 0b10000001 be 0.
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        <br><br>
+
+        <a name="float"></a>
+        <h3><u>Decimal numbers (Float/Double)</u></h3>
+        With integers, representing them in binary is simple. However, decimal numbers is much
+        harder. How do we represent the decimal and whole number portion? What about really 
+        big numbers? What about really small numbers? Well, we don't need to worry about that 
+        for the AP Exam, but you should be aware that Floats/Doubles do this with some clever 
+        math implementation with fractions and exponents that does have some form of inaccuracy 
+        called <b><u>point float error.</u></b> Since we are still limited to 32 or 64 bits, we 
+        can not represent every possible number, since it would be infinite, so we just use a 
+        "good enough" representation with a few digits of accuracy. In the exam, we don't care 
+        about optimizing, so we never really need to use float, <b>we can stick with double only.</b>
+        Doubles have more accuracy and a much greater range, so we are less likely to run into 
+        any limitations for it, whereas floats have a lower accuracy and range. The benefit of 
+        using a float over a double is just memory usage and compatability with very old systems.<br>
+
+        <h4>Usage</h4>
+        <pre><code class="Java">
+double num = 5.0; //Doubles typically have a decimal point
+double num2 = 5.; //you can even just ignore the zero
+double num3 = 5; //or you can ignore the decimal itself. It will convert the integer into a double
+double num4 = 5f; //You may see this online, the "f" means represent this as a <b>F</b>loating point number
+double num5 = 5/2; //Will hold the value: 2. Since it does the math first, it does integer division and then converts the value to 2.0, which gets assigned to that variable.
+float lessAccurateNum = 5f; //Creating a float.
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        <br><br>
+
+        <a name="char"></a>
+        <h3><u>Characters</u></h3>
+        <p>Characters are just a single letter, number, or symbol the computer represents. It 
+        stores a chracter as a single byte (8 bits), so it is similar in size to a byte integer.
+        This means Java can represent 256 different characters, but it also has support for 
+        unicode (2 bytes/16 bits), which means we can do emojis as well. Characters in Java 
+        are created using the single quotation mark, or appostrophe symbol. Characters can also 
+        be special characters such as the tab character or the newline character. Below is a 
+        table of ASCII characters each integer from 0-255 represents (You wont need to memorize 
+        this for the exam)</p><br>
+        <div><img src="http://www.asciitable.com/index/asciifull.gif" onerror="this.onerror=null;this.src='OfflineImages/asciitable.gif'" width="800px"> </div>
+        <h4>Usage</h4>
+        <pre><code class="Java">
+char testLetter = 'a'; //Single quotation marks
+char testSynbol = '@';
+char newLineCharacter = '\n'; //Something you have to memorize
+char backslashCharacter = '\\'; //Since \ is used to escape formatting, we have to escape itself to print it. Otherwise it would escape the ' and give a syntax error
+char tabCharacter = '\t';
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        <br>
+
+        <a name="String"></a>
+        <h3><u>String</u></h3>
+        Strings are a bunch of characters "stringed" together to form a word or sentence. You 
+        may also notice that this is the only data type we will commonly use that starts with a 
+        capital instead of a lowercase 's'. This is because this is actually a class, not a 
+        primitive data type. Because of this, we have a bunch of extra features we can use, but 
+        having too much of this can cause performance issues (which we dont care about).<br>
+        Strings in Java are created with the double quotation mark ", which is not to be confused 
+        with characters, which is a single quotation mark '.
+        <h4>Usage</h4>
+        <pre><code class="Java">
+String test = "This is my word";
+String moreWords = "This is a sentence. " + "This is another one"; //we can join 2 strings by using the + operation. Keep in mind it doesn't add a space, so do it yourself
+String numberTest = "This is my number: " + 6; //we can also add ints, it will convert it to a string 
+String charTest = "This is my letter: " + 'a'; //we can also add characters 
+String emptyStr = ""; //If we dont want to set anything yet. We will use this to add characters later;
+String noStr; //If we want to initialize this later. If we do not initialize to at least "", we can not use this variable 
+        </code></pre>
+        <h4><b>Built-in methods</b></h4>
+        Since String is a class, it also has some built-in methods to help us here. You may not 
+        need to remember each one, as you will be given a sheet with some of these on there. The 
+        ones that aren't on the sheet aren't likely needed to solve the questions
+        <img src="https://i.imgur.com/tQL2iWN.png" onerror="this.onerror=null;this.src='OfflineImages/apstring.png'">
+        <pre><code class="Java">
+String test = "This is my word"; //This is going to be the word I will use for every method for consistency
+
+<b>.length()</b>
+System.out.println( test.length() ); //The amount of characters the test variable has is 15
+
+<b>.indexOf(String toFind)</b>
+<b>.indexOf(String toFind, int startingFrom)</b>
+System.out.println( test.indexOf("i") ); //The first "i" it sees is at index 2
+System.out.println( test.indexOf("i",3) ); //The first "i" it sees after index 3 is at index 5
+
+<b>.lastIndexOf(String toFind)</b>
+System.out.println( test.lastindexOf("i") ); //The last "i" it sees is at index 5
+
+<b>.substring(int startIndex)</b>
+<b>.substring(int endIndex)</b>
+System.out.println( test.substring(3) ); //returns "s is my word". Starts at index 3 and goes to the end
+System.out.println( test.substring(3,7) ); //returns "s is". Starts at index 3 and stops before it reaches the character at index 7
+
+<b>.charAt(int index)</b>
+System.out.println( test.chatAt(6) ); //Gets the character at an index. In this case, at index 6 is the character 's' in "is"
+
+<b>.split(String delimiter)</b>
+String[] words = test.split(" "); //Creates an array of substrings that have been seperated by the delimiter in the original string (space in this case)
+                                    //so the output of this is ["This","is","my","word"]
+
+<b>.equals(String otherWord)</b>
+System.out.println( test.equals("This is my word") ); //Checks if the string matches character by character. Recommended over ==
+
+<b>.toLowerCase()</b>
+System.out.println( test.toLowerCase() ); //converts all characters to lowercase. Output is "this is my word"
+
+<b>.toUpperCase()</b>
+System.out.println( test.toUpperCase() ); //converts all characters to uppercase. Output is "THIS IS MY WORD"
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5><br>
+
+        <a name="boolean"></a>
+        <h3><u>Booleans</u></h3>
+        Booleans are simply just true or false. In Java, true/false is case sensitive and they are always in lowercase.
+        <h4>Usage</h4>
+        <pre><code class="Java">
+boolean test = true;
+boolean test2 = false;
+boolean test3 = (1==1 && 2==2); //can be set to some boolean statement. This would output true 
+boolean hasFoundCharacter = testString.find('a') != -1; //will be true if it finds 'a' in testString. Otherwise false 
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5><br>
+        
+        <a name="object"></a>
+        <h3><u>Objects</u></h3>
+        Objects encompass everything in Java; every class and primitive data types inherit from the Object class. Since it contains everything, 
+        it can be any datatype from string to int, but is very unsafe to use (no type safety), uses more memory, and runs slower.
+        <h4>Usage (I do not recommend you use Object, you will almost certainly lose marks if you do)</h4>
+        <pre><code class="Java">
+Object test1 = "hello";
+Object test2 = 12;
+Object test3 = 15.15;
+Object test4 = false;
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5><br>
+
+        <a name="operations"></a>
+        <h3><u>Math Operations and Problem Solving</u></h3>
+        Programming uses a lot of math. I'm not talking about anything more complicated than calculus, but it can certainly do that if you ever need 
+        to use it. Programming relies heavily on your problem solving skills, and whether you know how to break down a problem into different, simpler steps.
+        Most math we will use is about grade 10 level when we do exponents, the rest is mostly just algebra, multiplication, linear equations, linear regression,
+        and other math you learned before. In the exam, this is all the math skills you will need. No need to be an expert in trigonometry, quadratics, or
+        differential calculus. However, despite only using relatively simple concepts, it pushes to concepts to the limit of what word problems you see in school
+        dont even exceed. We'll start with these oeprations
+        <pre>
++  Addition
+-  Subtraction
+*  Multiplication
+/  Division
+%  Modulus (Remainder)
+=  Assignment
++= Increment (Add then assign)
+-= Decrement (Subtract then assign)
+++ Increment by 1 (Add 1 then assign)
+-- Decrement by 1(Subtract 1 then assign)
+*= Multiply then assign 
+/= Divide then assign 
+%= Mod then assign
+        </code></pre>
+        You may notice that square root and power is not in here. Those are methods provided by the Math class
+        <div><img src = "https://i.imgur.com/NHx2Drq.png" onerror="this.onerror=null;this.src='OfflineImages/apmath.png'"></div>
+        <h4>Usage</h4>
+        <pre><code class="Java">
+int intVariable;
+double doubleVariable;
+
+//Addition  
+intVariable = 5 + 6;  //11 
+
+//Subtract
+intVariable = 12-30; //-18 
+
+//Multiplication
+intVariable = 12*12; //144 
+
+//Division
+intVariable = 32/6; //Integer division: 5 
+doubleVariable = 32/6; //Integer division: 5 
+doubleVariable = 32/6.0; //5.33333333333 
+
+//Modulus
+intVariable = 32 % 6; //32 divided by 6 = 5 Remainder 2. Returns 2 
+intVariable = 100 % 3; //100 divided by 3 = 33 Remainder 1. Returns 1 
+intVariable = 44 % 2; //44 divided by 2 = 2 Remainder 0. Returns 0 
+
+//Increment
+intVariable += 5; //Adds 5 to the current value of x 
+intVarliable = intVariable + 5; //Does the same as above 
+
+//Decrement
+intVariable -= 5; //Subtracts 5 to the current value of x 
+intVarliable = intVariable - 5; //Does the same as above    
+
+//Increment by 1
+intVariable++; //Adds 1 to the current value of x 
+intVarliable = intVariable + 1; //Does the same as above 
+intVariable = 0;
+System.out.println(intVariable++); //Prints 0, the increments to 1 
+intVariable = 0;
+System.out.println(++intVariable); //Increments to 1, then prints 1 
+
+//Decrement by 1
+intVariable--; //Subtracts 1 to the current value of x 
+intVarliable = intVariable - 1; //Does the same as above 
+intVariable = 0;
+System.out.println(intVariable--); //Prints 0, the decrements to -1 
+intVariable = 0;
+System.out.println(--intVariable); //decrements to -1, then prints -1 </code></pre>
+        <pre><code class="Java">
+intVariable = Math.abs(-5); //Gets the absolute value of a number, which is 5 
+doubleVariable = Math.abs(-3.3); //Gets the absolute value of a number, which is 3.3 
+
+doubleVariable = Math.sqrt(9); //Gets the square root of 9, which is 3 
+
+doubleVariable = Math.pow(3,2); //Gets 3^2, which is 9 
+doubleVariable = Math.pow(9,3); //Gets 9^3, which is 729 
+doubleVariable = Math.pow(9,0.5); //Gets 9^0.5, which is 3. Fun fact: anything to the power of 1/2 is the square root, anything to the power of 1/3 is the square root, and so on </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5><br>
+        
+        <a name="casting"></a>
+        <h3><u>Type Casting/Conversion</u></h3>
+        When you work in Java, you will eventually need to convert between data types to achieve what you want to do. This is something like 
+        converting an integer into a double, double into an integer, a String into an integer, and so on. Here's a list of common conversions 
+        you will most likely use, but needing to do this on the exam is unlikely with the exception of char to String, which will likely be useful.
+        <h4>Usage</h4>
+        <pre><code class="Java">
+//int/double to String 
+String.valueOf(5);
+String.valueOf(5.6);
+        </code></pre>
+        <div style="height: 5px;"></div>
+        <pre><code class="Java">
+//String to int 
+Integer.parseInt("5"); 
+        </code></pre>
+        <div style="height: 5px;"></div>
+        <pre><code class="Java">
+//String to double
+Double.parseDouble("5.6")
+        </code></pre>
+        <div style="height: 5px;"></div>
+        <pre><code class="Java">
+//Int to double 
+(double)5; //We do it this way since 5 is usually a variable, so we cant just slap f to the end like '5f'
+5/1.0; //Dividing by 1.0 converts it to a double, since division of an int with a double or vice versa converts the answer to a double
+        </code></pre>
+        <div style="height: 5px;"></div>
+        <pre><code class="Java">
+//Double to int
+(int)5.6; //Removes the decimal place. If positive, it rounds down (to 5 in this example). If negative (ex: -5.6), rounds up to -5 for that example.
+        </code></pre>
+        <div style="height: 5px;"></div>
+        <pre><code class="Java">
+//char to String
+'a' + ""; //Adding an empty string to a char causes Java to automatically convert the char into a String
+""  + 'a'; //Also works the other way around
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5><br>
+        
+        <a name="constant"></a>
+        <h3><u>Constants</u></h3>
+        Constants are read-only variables that the programmer intends to not change during the program's run time. Examples include mathematical constants 
+        like Pi, e, or sqrt(2), but can also be stuff like screenWidth, screenHeight, programStartTime, etc. This modification is more to ensure we don't 
+        accidently change the value of this variable, and is by no means necessary in any code to run normally. To create a constant, we define the variable 
+        as normal, except we put "final" at the beginning.
+        <h4>Usage</h4>
+        <pre><code class="Java">
+final double PI = 3.1415926;
+final double sqrtTwo = 1.414213;
+final String name = "Scott Scotterson";
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5><br>
+        
+        <a name="random"></a>
+        <h3><u>Random</u></h3>
+        While most times we will not need to generate a random number, it has appeared on older AP exams and is a part of the course. Usage of this class 
+        is not particularly difficult. The only things we will typically need to do is either generate a random integer within a certain range or a 
+        random double between 0.0-1.0.
+        <div><img src="https://i.imgur.com/NHx2Drq.png" onerror="this.onerror=null;this.src='OfflineImages/apmath.png'"></div>
+        <h4>Usage</h4>
+        <pre><code class="Java">
+Math.random(); //In the Java quick reference sheet. Generates a random double between 0.0 to 1.0. No need for imports or classes
+        </code></pre>
+        <br>
+        <pre><code class="Java">
+Random random = new Random(); //the lowercase random is the variable name, and the capital Random is the class name
+random.nextInt(10); //generates a random integer between [0,10). So either 0,1,2,3,4,5,6,7,8, or 9. Requires the "Random random = new Random()" line
+random.nextDouble(); //generates a random double bewteen 0.0 to 1.0 
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+    </div>
+    <div class="divider"></div>
+    
+    <div style="margin-left: 10px">
+        <a name="Conditional"></a>
+        <h2>If Statements</h2>
+        <p>Conditional statements is found in nearly every computer program. If-statements are responsible for controlling the flow of a program 
+            based on the criteria and input the user gives. If-statements are very versatile and will be used for almost every question on the 
+            AP Exam. The concept of an if-statement is simple, but knowing how to use it well has a learning curve.<br>
+        </p>
+        <br>
+        <a name="ifsimple"></a>
+        <h3><u>If, Else if, Else Statements</u></h3>
+        <p>
+            The 3 keywords are "if", "else if", and "else". An if-statement only allows one of the branches to run, and after it runs, it skips 
+            to the end of the if-statement and continues running code. A simple if-statement can only contain just one if-line, but more complex 
+            if-statements can contain a if, multiple else if's, followed by an else. Note that "else if" and "else" is optional. You can have 
+            a "if"-"else if", and no "else" block. You can also have an "if"-"else" without any "else if"s. It takes some time to 
+            understand which one to use.<br>
+            <ul>if - Used to start an if-statement</ul>
+            <ul>else if - Used to run only if the precding statement is false</ul>
+            <ul>else - Runs only if everything is false</ul>
+            Note that the moment you create another line starting with "if", it becomes a seperate if statement, and both blocks of code inside 
+            those if-statements can run.
+        </p>
+        <h4>Usage</h4>
+        <pre><code class="Java">
+if(boolean_Statement){
+    //code here wil run when boolean_statement is true
+}
+else{
+    //code here will run when booolean_statement is false
+}
+//code here will run regardless of if boolean_statement is true or not
+        </code></pre>
+        <pre><code class="Java">
+if(boolean1){
+    //Code here run when boolean1 is true
+}else if(boolean2){
+    //code here will run when boolean1 is false and boolean2 is true
+}else if(boolean3){
+    //code here will run when boolean1 and boolean2 are false and boolean3 is true
+}else{
+    //code here will run when none of the above statements are true
+}
+//code here will run regardless of if boolean1, boolean2, or boolean3 is true or not
+        </code></pre>
+        <pre><code class="Java">
+if(boolean1){
+    //code here will run if boolean1 is true  
+}else if(boolean2){
+    //code here will run if boolean1 is false and boolean2 is true
+}
+//code here will run regardless of if boolean1 or boolean2 is true or not
+        </code></pre>
+        <pre><code class="Java">
+if(boolean1){
+    //code here will run if boolean1 is true
+}
+if(boolean2){
+    //code here will run if boolean2 is true. It doesnt care whether boolean1 is true or not
+}
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        <br>
+        <a name="logic"></a>
+        <h3><u>Logical Operators and Statements</u></h3>
+        <p>
+            The hardest part of if-statements is the condition. Some can be a simple <i>"check if 2 values are equal"</i>, while others can take up
+            several lines and statements mashed together with and/or. Remember, the condition should always return or be a boolean type. If you put 
+            an integer in there, Java isn't going to like that.<br>
+            With conditions, you need to know what data you are working with, and very specifically what are you looking for. On the AP exam, they 
+            thouroughly test you on this. Additionally, creating mathematical formulas are common in validating numbers, as well as boolean functions 
+            and methods that can offload the complicated checks into a seperate, more readable function. You can use brackets to group certain statements<br>
+            Heres a list of operators you must know and memorize for the exam:
+            <ul><pre>==     Equals comparison. Not to be confused with the single '=', which is used for assignment</code></pre></ul>
+            <ul><pre>!=     Not Equals comparison</code></pre></ul>
+            <ul><pre>&&     Logical And. Requires a logical statement to the left and right of it that both must equal true to evalulate to true</code></pre></ul>
+            <ul><pre>||     Logical Or. Requires a logical statement to the left and right of it that one of them must equal true to evalulate to true</code></pre></ul>
+            <ul><pre>!      Logical Not. Inverts true to false and false to true</code></pre></ul>
+            <ul><pre>>      Greater than comparison</code></pre></ul>
+            <ul><pre>>=     Greater than or equals comparison</code></pre></ul>
+            <ul><pre><      Less than comparison</code></pre></ul>
+            <ul><pre><=     Less than or equals comparison</code></pre></ul>
+        </p>
+        <h4>Usage</h4>
+        <pre><code class="Java">
+//This code here is used for the next 3 examples below
+Scanner scanner = new Scanner(System.in); //Get user input from console input
+int inputInt = scanner.nextInt(); //User input
+String inputString = scanner.nextLine(); //User input
+        </code></pre>
+        <pre><code class="Java">
+//Check if something is equal 
+if( intInput == 5 ){
+    System.out.println("You typed 5");
+}
+if( inputString.equals("10") ){ //Remember, we use .equals() to compare strings. String.equals() returns a boolean, so we can use this as our condition
+    System.out.println("You typed 10");
+}
+        </code></pre>
+        <pre><code class="Java">
+//Check if something is not equal
+if( intInput != 5 ){
+    System.out.println("The number is not 5")
+}
+if( ! inputString.equals("10") ){ //there is no .notEquals(), so we have to use the not-operator '!' to invert it
+    System.out.println("You did not type 10");
+}
+        </code></pre>
+        <pre><code class="Java">
+//Check for greater-than/less-than stuff 
+if( intInput > 5 ){
+    System.out.println("You typed a number greater than 5")
+}else if( intInput < 5 ){
+    System.out.println("You typed a number less than 5")
+}else if( intInput == 5 ){ //could be replaced with an "else"
+    System.out.println("You typed 5")
+}
+
+if( inputString.length() >= 12){        //Phone numbers can be "+11234567890" or "1234567890"
+    System.out.println("This is too long to be a phone number")
+}else if( inputString.length >= 10){
+    System.out.println("This could be a valid phone number")
+}else if( inputString.length < 10 ){    //could be replaced with an "else"
+    System.out.println("This is too short to be a phone number")
+}
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        <br>
+        <a name="combine"></a>
+        <h3><u>Combining Logical Statements</u></h3>
+        <p>
+            You may have noticed I didn't cover && and || above, since that I wanted to go through more in-depth here. When combining && and ||,
+            you have to be careful that it runs correctly, so I would recommend to use () to ensure it runs in the right order, like specifying
+            order of operations in math. Just to recap:
+            <ul><pre>&&     Logical And. Requires a logical statement to the left and right of it that both must equal true to evalulate to true</code></pre></ul>
+            <ul><pre>||     Logical Or. Requires a logical statement to the left and right of it that one of them must equal true to evalulate to true</code></pre></ul>
+        </p>
+        <h4>Usage</h4>
+        <p>Chess board is here for reference</p>
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.stack.imgur.com%2FHa2O7.jpg&f=1&nofb=1" onerror="this.onerror=null;this.src='OfflineImages/chess.jfif'">
+        <pre><code class="Java">
+//Check if a number is within a certain range
+if(number >= 0 && number < 10){
+    //Code to run if the number is in the domain: [0,10)
+}
+        </code></pre>
+        <pre><code class="Java">
+//This is a partial example for castling in chess. This is not a full implementation
+//To castle in chess, the king and the rook in the direction the player wants to castle in must not have moved in the game yet
+boolean leftBlackRookMoved = false;
+boolean rightBlackRookMoved = true;
+boolean blackKingMoved = false;
+String playerMove = "E8 G8"; //black king moves 2 spots right
+
+if( playerMove.substring(0,2).equals("E8") && blackKingMoved == false){ //check if we are referencing an unmoved king. Can also replace "blackKingMoved == false" with "!blackKingMoved"
+    if( !( playerMove.substring(3,5).equals("G8") || playerMove.substring(3,5).equals("B8") ) ){
+        //not castling
+    }else if(playerMove.substring(3,5).equals("G8") && rightBlackRookMoved == false){
+        //Castle right
+    }else if(playerMove.substring(3,5).equals("B8") && rightBlackRookMoved == false){
+        //Castle left 
+    }
+}
+        </code></pre>
+        <pre><code class="Java">
+//Another chess example, but this validates if a knight is moved correctly
+int moveX = 2; How many spots is the player moving on the chess board
+int moveY = 1;
+if( (moveX == 2 && (moveY == 1 || moveY == -1) ) ||         //if moving 2 right and either 1 up or 1 down
+    (moveX ==-2 && (moveY == 1 || moveY == -1) ) ||         //if moving 2 left and either 1 up or 1 down
+    (moveY == 2 && (moveX == 1 || moveX == -1) ) ||         //if moving 2 up and either 1 left or 1 right
+    (moveY == 2 && (moveX == 1 || moveX == -1) )){          //if moving 2 down and either 1 left or 1 right
+    System.out.println("Knight move valid");        //if its any move from above, it is a valid move
+}else{
+    System.out.println("Knight move invalid");
+}       
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        <br>
+        <a name="invert"></a>
+        <h3><u>Inverting Logical Statements</u></h3>
+        <p>
+            This may be something you see on a multiple choice question, but in code, it would just be a simple change from if(statement) to if(!(statement))
+            There is a trick to invert a logical statements. It's just simply fliping the And-Or around and distributing the not '!' operator. In the 
+            example below, assume A and B are boolean statements
+            <li>!(A || B) = !A && !B</li>
+            <li>!(A && B) = !A || !B</li>
+            Here are some more complicated examples
+            <ol>!(A && (B || C)) 
+                <ul>= !(A && (B || C)) </ul>
+                <ul>= !A || !(B || C)</ul>
+                <ul>= !A || (!B && !C)</ul>
+            </ol>
+            <ol>!(A || B || C || D || !E) 
+                <ul>= !A && !B && !C && !D && !!E </ul>
+                <ul>= !A && !B && !C && !D && E</ul>
+            </ol>
+        </p>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+    </div>  
+    <div class="divider"></div>
+
+    <div style="margin-left: 10px">
+        <a name="Loops"></a>
+        <h2>Loops</h2>
+        <p>Loops are statements that are used to run a block of code multiple times. While it may not seem useful at first, it is one of the 
+            most versitile and used statements in programming. While running the same line of code over and over again is occasionally done,
+            most of the time they involve a variable that changes in the loop so it is the process that is repeated, not the output that is 
+            repeated.<br>
+            For example, if we need to check if someone won a game of connect 4, we should check every spot for a vertical, horizontal, or
+            diagonal line of 4. So in each position if possible, check in those 4 directions, and if you find a line of 4, someone has won 
+            the game. <br>
+            We also have ways to control how we loop, and have 2 keywords to help us do this:
+        </p>
+            <li>break</li>
+                <ul>Stops the loop and exits</ul>
+                <ul>Often used to say we're done with the loop, we can stop now</ul>
+                <ul>Ex: We are finding a number in an array. Once we find it, we don't need to scan the rest of the array, so we can stop the loop here</ul>
+            <li>continue</li>
+                <ul>Stops the current iteration of the loop and starts a new iteration of the loop</ul>
+                <ul>Used to skip certain parts of a loop when we dont need them to run</ul>
+                <ul>Ex: We are trying to find a blue ball in a storage box. We can scan through every item and if it's not a ball, we continue scanning the box. If it is, 
+                    we dont continue and check if the color of the ball is blue</ul>
+
+        <br>
+
+        <a name="loopsyntax"></a>
+        <h3><u>Loop Syntax</u></h3>
+        <a name="forloop"></a>
+        <h4>For Loop</h4>
+        <p>A for loop is used to repeat something often for a certain number of times. It is typically good practice to use this to make sure 
+            your program doesn't enter an infinite loop and freeze up the program. This type of loop is also the hardest one out of the rest 
+            of them in terms of syntax and how to use it effectively, but it is also one of the most useful loops in many programming languages 
+            even outside of Java
+        </p>
+        <pre><code class="Java">
+for(BeginningStatement ; CheckStatement ; RepeatedStatement){
+//BeginningStatement: <span style="color: #DDD">Code here is usually used to create a new integer variable as a counter to be used in the loop  
+//CheckStatement: <span style="color: #DDD">We put a boolean statement in here. Whever this evaluates to false, the for-loop stops repeating 
+//RepeatedStatement: <span style="color: #DDD">We usually use this spot here to increment the counter variable    
+        </code></pre>
+        <pre><code class="Java">
+//So if I were to break it into pseudo-code, it would look something like this
+1. BeginningStatement
+2. CheckStatement. If boolean check is true, continue. Otherwise, exit.
+    3. Code inside the for-loop 
+4. RepeatedStatement
+5. Go to step 2
+Exit: 
+6. Code after the for-loop
+        </code></pre>
+        <pre><code class="Java">
+for(int i=0 ; i < 10 ; i++){...}
+//Code that runs 10 times. Each time it iterates, the variable "i" changes values. Once the program runs, i is equal to 0. The next iteration, i = 1, then i = 2, and so on
+//Once i reaches 9, it runs the 3rd statement (i++), i turns into 10. After that, it runs the (i < 10) check which it fails, then exits
+//So the code in the loop never sees that i=10, and then once it exits, "i" is deleted from memory and can not be accessed anymore
+        </code></pre>
+        <pre><code class="Java">
+for(int i=0 ; i < 10 ; i++){
+    System.out.println(i);
+}
+//Which runs the same as this code here:
+int i=0;
+if(i < 10){
+    System.out.println(i);
+    i++;
+    if(i < 10){
+        System.out.println(i);
+        i++;
+        if(i < 10){
+            System.out.println(i);
+            i++
+            if(i < 10){
+                System.out.println(i);
+                i++
+                if........
+            }
+        }
+    }
+}
+//You aren't going to ever need to use code like that above, but it's just a way to understand how a for-loop works
+        </code></pre>
+        <p>While this is it for the concepts of how a for-loop works, how to effectively use a for-loop is a lot more complicated and requires
+            a bit more knowledge and a lot of practice. I will cover how it can be used later in this guide. It is also worth nothing all 3 
+            code statements in a for-loop is optional, but 99% of the time you should be using all 3 of those statements. 
+        </p>
+        <a name="foreachloop"></a>
+        <h4>For-Each Loop</h4>
+        <p>A for-each loop uses the same "for" keyword as the above example, except is used to iterate through arrays. If you are unsure what an array
+            or ArrayList is, <a href="#Arrays"><u>click here to read about primitive arrays</u></a> and <a href="#ArrayList"><u>click here to read about ArrrayList.</u></a> 
+        </p>
+        <p>A for-each loop is used when we only care about going over each element in an array, and not anything about the index of where each 
+            element is. This for-loop is quite specialized, and has the advantage of being faster to type out, but at the disadvantage of being slower 
+            to correct if you do need a for loop instead. You do not need to know this type of loop for the exam, as a normal for loop can still do the 
+            same thing as this type of loop
+        </p>
+        <p>What a for-each loop does is loop over every element in an array, and assigns it to the declared variable on the left (see below). Note that the 
+            data type must match, except for ArrayList, where we can put int instead of Integer, or double instead of Double.
+        </p>
+        <pre><code class="Java">
+int arr[] = {2,4,6,8,10,12};
+
+//For-each loop
+for(int element : arr){ //For every integer "element" in the array "arr"
+    System.out.println(element);  //Print out element
+}
+
+//For loop equivilant
+for(int i=0 ; i &lt; arr.length ; i++){
+    int element = arr[i];
+    System.out.println(element);
+}
+        </code></pre>
+        <a name="whileloop"></a>
+        <h4>While Loop</h4>
+        <p>A while loop is a bit simpler. All it does is it keeps running the code inside the curly braces for as long as the condition it gives remains true</p>
+        <pre><code class="Java">
+int x = 0;
+while(x&lt;5){
+    System.out.println("x is less than 5. x is currently: " + x);
+    x++;
+}
+//This would output
+x is less than 5. x is currently: 0
+x is less than 5. x is currently: 1
+x is less than 5. x is currently: 2
+x is less than 5. x is currently: 3
+x is less than 5. x is currently: 4
+        </code></pre><br>
+        <a name="dowhileloop"></a>
+        <h4>Do-While Loop</h4>
+        <p> A do-while loop is much like a while loop, except it runs at least once before exiting. In a for loop, if the condition is initially false,
+            the loop will exit without ever running the code. You won't use this often on the AP Exam, but this is commonly used for user input.
+        </p>
+        <pre><code class="Java">
+Scanner scan = new Scanner(System.in);
+String answer;
+do{
+    System.out.println("Type: the correct answer");
+    answer = scan.nextLine();
+}while(answer != "the correct answer"); 
+//This would keep running until the user types "the correct answer" into the terminal
+        </code></pre>
+        <p> It is worth nothing that any variable we create in the do{} block will not be accessable in the while(condition) block. If you want to modify 
+            a value in the do{} block and check that value in the while(condition), you must initialize that variable before like what I just did in that 
+            example above.
+        </p>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+
+        <a name="which"></a>
+        <h3><u>Which loop do I use and when do I use them?</u></h3>
+        <ul>
+            <b>For Loop</b>
+            <ul>When you need to repeatedly run code a certain amount of times. This is used 95% of the time</ul>
+            <ul>When you need to evaluate an array (evaluating most or the entire array)</ul>
+            <ul>When you need to evaluate characters in a string (evaluating most or all characters)</ul>
+
+            <b>While Loop</b> 
+            <ul>When something can repeat forever until the user does something that causes the loop to terminate
+                <ul>Something like running a while loop to handle events such as updating the screen for a game needs to always run as long as the program is running</ul>
+            </ul>
+            <ul>When you want something to repeat forever</ul>
+            <ul>When you don't know how many times to run something repeatedly, but know when the loop should stop running</ul>
+
+            <b>Do-While</b> 
+            <ul>When something should run at least once, such as grabbing user input, but may need to re-run the code if the input is invalid</ul>
+            <ul>You won't likely need to use this for the AP Exam</ul>
+        </ul>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+
+        <a name="nesting"></a>
+        <h3><u>Nesting Loops</u></h3>
+        <p>Neting loops is when we put a loop inside another loop — typically when we are working with 2D arrays. However, nesting loops is not only used for those purposes
+            Sometimes when trying to solve a problem involving a single number, we may need to use a loop to solve that problem. An example would 
+            be counting in binary without using any conversion. Heres how you would count up to 1 in binary:
+        </p>
+            <pre><code class="Java">
+for(int i=0 ; i < 2  ;i++){
+    System.out.println(i);
+} 
+        </code></pre> 
+        <p>But wheres the nesting in this function? I just used 1 underwhelming for-loop here. What if we try to count to 3 using this, how do we do it?
+        </p>
+        <pre><code class="Java">
+for(int j=0 ; k < 2 ; j++){
+    for(int i=0 ; i < 2  ;i++){
+        System.out.print(j);
+        System.out.println(i);
+    }
+}       
+        </code></pre> 
+        <p>So how does that work? When we nest for-loops for each value j (in our exammple above), i has to go through 0 and 1 before j can increase 
+            to 1. After it increases to 1, we re-run the code inside the j for-loop, which runs the i for-loop again, going through i=0 and i=1 again.
+            <br>
+            Going through it step by step, j starts at 0, and so does i. We then print the value of j, then the value of i, followed by a newline<br>
+            <div class=code>j=0, i=0</div><br>
+            Next, we're still in the i for-loop since we havent finished running it yet. Now i gets incremented by 1, and when we run the prints, we get:<br>
+            <div class=code>j=0, i=1</div><br>
+            Now when i=1, it gets incremented to 2, which then causes the for-loop to stop. After the i for-loop ends, we also finish the j for-loop, so j gets incremented by 1, and restart the i for-loop starting at 0<br>
+            <div class=code>j=1, i=0</div><br>
+            We then repeat the process after the print statements, i gets incremented and repeats <br>
+            <div class=code>j=1, i=1</div><br>
+            Now when i increments to 2, the i for-loop stops, which completes an iteration of the j for-loop, incrementing j to 2, which then stops the j-for loop. So thats how this works.<br>
+            This would work counting in octal (base 8: 0,1,2,3,4,5,6,7,10,11,12,13,14,15,16,17,20) that no one uses, as well as hex with a few modifications.
+            If you want to be able to print more digits, you can add more for-loops. This is not the most efficient way of counting in another base, but it
+            is good for introducing the concept of nesting loops and how it works.<br><br>
+
+            In essence, any loop inside another loop must finish executing before proceeding. In a way, it runs similar to the code below:
+            <pre><code class="Java">
+int j=0;
+for(int i=0 ; i < 2  ;i++){
+    System.out.print(j);
+    System.out.println(i);
+}
+
+j++; //j=1
+for(int i=0 ; i < 2  ;i++){
+    System.out.print(j);
+    System.out.println(i);
+}
+        </code></pre>
+        </p>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+    </div>
+    <div class="divider"></div>
+
+    <div style="margin-left: 10px">
+        <a name="Arrays"></a>
+        <h2>Primitive Arrays</h2>
+        <p>Arrays are used to store multiple values inside the same variable name. This replaces the need to have variables such as number1, number2, 
+            number3, number4, etc. Instead, it works like number[0], number[1], number[2], etc.</p>
+        <p>Array elements, or the data stored in the array, are organized into indexes, which is the position they are in starting from position 0.
+            The index starts from 0, and counts up to the array's size, minus one. Since we start counting from 0, this type of stuff is prone to 
+            off-by-one errors, which we will cover later.</p>
+            <a name="arraysyntax"></a>
+        <p>Arrays follow the following syntax:</p>
+        <pre><code class="Java">
+datatype variableName[]; //Declaring an array
+datatype variableName[] = {value1,value2,value3, ...} //Declaring and initializing an array of values
+datatype variableName[] = new datatype[size] //Declaring and initializing an array of default values of a certain size
+        </code></pre>
+        <p>Primitive arrays have a fixed size and can not be changed. We either declare everything in that array, or we just declare a size 
+            and then it gets filled with default values (0 for numbers, null for Strings, '' (ASCII value = 0) for chars)
+        </p>
+        <a name="arrayusage"></a>
+        <p>Heres some examples for how to use them</p>
+        <pre><code class="Java">
+int intArray[] = {1,2,3,4,5};
+int intArra2[] = new int[10];
+
+double doubleArray[] = {3.1, 2.2, 5f, 3};
+
+char charArray[] = "test";
+char charAttay2[] = {'a','b','c','d'};
+
+String strArray[] = {"One","two","three","four"};
+        </code></pre>
+    </div>
+    <div class="divider"></div>
+
+    <div style="margin-left: 10px">
+        <a name="ArrayList"></a>
+        <a name="arraylistsyntax"></a>
+        <h2>ArrayList</h2>
+        <p>ArrayList resolves a bunch of shortcomings of primitive arrays. ArrayList does not have a fixed size, and we can remove elements without 
+            needing to shift everything down manually. The AP Exam will sometimes refer to ArrayList as List, just treat them as interchangeable.
+            You will also need to use ArrayList for some questions unless you want to over-complicate your solutions with primitive arrays.
+        </p>
+        <p>Creating an ArrayList is a bit different, but still relatively simple. Note that we can not specify primitives, only classes as a data type</p>
+        <pre><code class="Java">
+ArrayList&lt;Integer> intArray = new ArrayList<>(); //byte, short, int, and long are under the Integer class
+ArrayList&lt;Double> doubleArray = new ArrayList<>(); //float and double are under the Double class
+ArrayList&lt;String> stringArray = new ArrayList<>(); //String is already a class
+ArrayList&lt;Character> charArray = new ArrayList<>(); //char is under the Character class
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+
+        <a name="functions"></a>
+        <h3><u>ArrayList Functions/Methods</u></h3>
+        <p>On the AP exam, they will give you a list of common functions for the ArrayList Class</p>
+        <img src="https://i.imgur.com/B3YZ9WW.png" onerror="this.onerror=null;this.src='OfflineImages/aparrlist.png'">
+        <p>For the most part, this is all you will need to use. Set(), get(), add(), remove(), and size()</p>
+        <pre><code class="Java">
+//Arrays
+ArrayList&lt;Integer> arrList = new ArrayList<>(); 
+int[] arr = new int[10];
+
+//Getting values
+arrList.get(0); 
+arr[0];
+
+//Setting values
+arrList.set(0,15); 
+arr[0] = 15;
+
+//Getting length/size 
+arrList.size() 
+arr.length
+
+//ArrayList only items (They increase or decrease the size of the entire array)
+arrList.add(5); //Adds 5 to the end of the array. Will thus increase the array size by 1
+arrList.add(3,5); //Inserts 5 at index 3, and shifts everything after it 1 element down
+                  //if the index > arrList.size(), will throw an IndexOutOfBoundsException
+arrList.remove(3); //Removes the value at index 3. Will thus decrease the array size by 1.
+                   //If index is invalid, will throw an IndexOutOfBoundsException
+
+//Useful stuff not on the quick reference sheet 
+arrList.indexOf(5); //Returns the index if the array contains the integer 5. Otherwise, returns -1
+arrList.lastIndexOf(3); //Returns the index if the array contains the integer 3, except now searching from the back instead of from the front. Otherwise, returns -1
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+
+        <a name="arraylistusage"></a>
+        <h3><u>When to use ArrayList</u></h3>
+        <p>When we see ArrayList in any problem on the exam, it is implied we have to use it. While you won't lose marks if you use ArrayList when 
+            the question uses a primitive array or vice versa, it may make solving the question harder. Note that if the function returns a primitive 
+            array, you can not return an ArrayList instead. While ArrayList does have a way to convert ArrayList to a primitive using 
+            <span id="inlinecode">ArrayList.toArray(), but this returns an Object[], not the original primitive datatype. 
+        </p>
+        <p>If the question does not specify whether to use ArrayList or not, think about what you need to do in the question. 
+            <ul>
+                <li>Is the final length/size of the array unknown?</li>
+                <li>Do we need to resize the array?</li>
+                <li>Does it take an ArrayList as input OR use an ArrayList as output?</li>
+            </ul>    
+            If the answer is yes to any of these, use an ArrayList. Otherwise, use a primitive array.
+        </p>
+        <p>Lets go over an example. Creating an array storing the first 10 values of a quadratic equation. Is the final length of the array unknown? 
+            No, we are told 10 values so the length is 10. Do we need to resize the array? No. Does it ask for any 
+            ArrayList input or output? For the sake of the question, no. Thus, we use int[]. 
+        </p>
+        <p>Heres another example. Generate the first 10 prime numbers. Is the final length unknown? No, its 10. Resize? No. ArrayList 
+            input or output? No.
+        </p>
+        <p>One last example. Generate all the prime numbers between 1-100. Is the final length of the array unknown? Yeah, we don't know how many 
+            there are until we calculate it. Do we need to resize the array? Yes, we can start with all values from 1-100, and start seeing which 
+            numbers can be factored into 2 smaller prime factors and delete them from that array (Look up Sieve of Eratosthenes). Does it take 
+            ArrayList as input or output? If yes, then thats fine. If no, then we need to convert the ArrayList into an int[] (see below)
+        </p>
+        <p>In the case you need to convert from a primitive array to ArrayList or vice versa (Shouldn't need to do this on the exam):</p>
+        <pre><code class="Java">
+//using int/Integer as an example
+
+//From ArrayList&lt;Integer> to int[]. Assume arrList is already defined
+int arr[] = new int[arrList.size()];
+for(int i = 0; i < arrList.size() ; i++){
+    arr[i] = arrList.get(i);
+}
+
+//From int[] to ArrayList&lt;Integer>. Assume arr[] is already defined
+ArrayList&lt;Integer> arrList = new ArrayList<>();
+for(int i : arr[]){
+    arrList.add(i);
+}
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+    </div>
+    <div class="divider"></div>
+
+    <div style="margin-left: 10px">
+        <a name="Functions"></a>
+        <h2>Functions and Methods</h2>
+        <p>A function/method is simply just a block of code that is given a name. This is useful since if we want to execute that block of code to do 
+            something like calculate a certain function or create a message window, instead of retyping everything, we just call the function with 
+            some input and that block of code will take that input and perform its intended task. For example, when we call a function like 
+            <span class="inlinecode">teststring.indexOf("a")</span>, we don't want to have to keep writing a for-loop to go over every letter to 
+            see at what index does teststring contain the letter "a". Instead, we just call the .indexOf() function to do the repetitive calculations 
+            and processing.
+        </p>
+        <a name="functions"></a>
+        <h3><b><u>Syntax</u></b></h3>
+        <pre><code class="plaintext">
+visibility [optional modifiers] return_type function_name([datatype input1name][, datatype input2name][, datatype input3name]...){ ... }
+
+Visibility can be:          public, private, or protected                           On the exam, we wont use protected.
+Optional modifiers can be:  static, abstract, or both
+Return_type can be:         void, int, double, float, String, boolean, etc.         Those ones I just listed are the most common
+Function_name can be:       Any word that does not contain spaces or start with a number
+Everything else is the input, and is optional.
+        </code><code class="Java">
+public static void main(String[] args){...}
+//The visibility is public
+//We use the optional 'static' modifier
+//Return type is void, meaning we do not output anything
+//The function name is "main". Note, we can only have 1 main function.
+//We define an array of strings as an input, and we are calling it "args"
+
+public void printHi(){...}
+//visibility is public 
+//No optional modifiers 
+//Function returns nothing (returns void)
+//Function name is "printHi"
+//No input is taken
+
+private int getAbsoluteValue(int val){...}
+//visibility is private, so references to this function is only allowed in the same file
+//No optional modifiers 
+//Function returns an integer 
+//Function name is getAbsoluteValue
+//Function takes 1 integer and gives it the variable name: "val"
+
+private abstract double arraySum(double[] array);
+//visibility is private 
+//Optional modifiers include abstract, meaning we are not to implement the function yet 
+//return type is double 
+//Function name is arraySum
+//Taking a double array under the variable name "array" as input 
+
+public int getMax(int a, int b, int c, int d){...}
+//Visibility is public 
+//returns an integer 
+//Function name is getMax 
+//Takes 4 integers as input with the variable names: "a", "b", "c", and "d"
+
+public ArrayList&lt;Integer> sort(ArrayList&lt;Integer> arrList, boolean sortReverse){...}
+//Visibility is public 
+//returns an Integer ArrayList 
+//Function name is sort
+//Takes an Integer ArrayList as input and a boolean asking if we want to sort the ArrayList in reverse called "sortReverse"
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+
+        <a name="arguments"></a>
+        <h3><u>Function Arguments/Parameters</u></h3>
+        <p>The function's arguments/parameters specify the input we need to give for the function to operate. If we do not give it the 
+            right amount of arguments or if we give them an argument that is not the right data type, Java will not let the program run.
+        </p>
+        <p>The arguments give you hints on what variables you need to use to solve the question. You may need to create more variables within 
+            the function. Each input argument will specify a data type and a variable name for you to use in your code. If you do not use all 
+            the arguments, you likely did something wrong on the exam. Each input argument can be any data type, and be given any valid name. 
+            However, the name of the argument is a hint to what you need to do with it. If the variable name given is something like "exponent", 
+            then we probably need to use it as an exponent in a calculation. If we have an input argument called "size", then that likely has 
+            to do with generating a list of that size, and so on.
+        </p>
+        <p>In the above code example, you can see I can specify as little as 0 input arguments, but there is no practical upper limmit for 
+            how many you need without it just being easier to use an array. They can be any data type including int, Integer, double, Double, float, 
+            String, char, Object, ArrayList&lt;Object>, Scanner, or any class at that. 
+        </p><br>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        <a name="return"></a>
+        <h3><u>Return</u></h3>
+        <p>Return is a special keyword used to declare that we have found the output and want to terminate the function. In some cases, the early 
+            termination feature that return has can be taken advantage of to end a function pre-maturely when we have completed the task or have found 
+            the answer without needing to go through everything.
+        </p>
+        <p>It is worth nothing that any variable we return must match with the return type given in the function declaration. If the function 
+            says <span class="inlinecode">public int getSum()</span>, we must return an integer. If it says <span class="inlinecode">public String getMessage()</span>,
+            then we must return a String.
+        </p>
+        <pre><code class="Java">
+public int getSum(int a, int b){
+    return (a+b); //will return an int
+}
+
+public double getMax(double a, double b){
+    if(a > b){
+        return a; //returns a double
+    }
+    else{
+        return b; //returns a double
+    }
+}
+
+public void printMessageFiveTimes(String msg){
+    if(msg.length() == 0){ //If no msg was specified
+        return; //Doesnt return anything, but still stops the function from continuing
+    }
+    for(int i = 0 ; i < 5 ; i++){
+        System.out.println(msg);
+    }
+    //we can put return here, but we don't have to
+}
+
+public ArrayList&lt;Integer> getEvenNumbers(ArrayList&lt;Integer> arrList){
+    for(int i=0 ; i < arrList.size() ; i++){
+        if( arrList.get(i) % 2 == 1){
+            arrList.remove(i);
+        }
+    }
+    return(arrList); //return modified ArrayList
+}
+
+public void noise(){
+    System.out.println("Squeak"); //Since the function is void, we don't have to use return
+}
+        </code></pre><br>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+
+        <a name="overloading"></a>
+        <h3><u>Overloading</u></h3>
+        <p>Overloading is giving a function the same function name, but with different inputs and optionally output. This is a way to give a function 
+            optional parameters/arguments. For example, if I call <span class="inlinecode">sum(5,6)</span>, it would make sense to implement 
+            <span class="inlinecode">sum(5,6,7)</span> and <span class="inlinecode">sum(5,6,7,8)</span> as well. Any overloaded function must have at 
+            least dissimilar arguments, otherwise it will not work. That means examples such as <span class="inlinecode">public void sayHi()</span> and 
+            <span class="inlinecode">public String sayHi()</span> would not work.
+        </p>
+        <p>Java has examples of overloaded functions. In example, Java overloaded the <span class="inlinecode">String.valueOf()</span> function to take 
+        any of the 6 primitive data types, and convert them into a String as we see on the right. As you can see, each variation of that function has 
+        different inputs. 
+        </p>
+        <img src="https://i.imgur.com/WJfblYM.png" onerror="this.onerror=null;this.src='OfflineImages/apvalueof.png'">
+        <pre><code class="Java">
+public void printMessage(){
+    printMessage("Hi"); //Note we do not have to call the other function. We could have just did System.out.println("Hi"); instead.
+}
+public void printMessage(String msg){
+    System.out.println(msg);
+}
+
+
+
+public double getMax(double a, double b){
+    if(a > b){
+        return a; //returns a double
+    }
+    else{
+        return b; //returns a double
+    }
+}
+public double getMax(double a, double b, double c){
+    return getMax(a,getMax(b,c)); //We can call the function above to get the max of the last 2, then the maximum of that and the first value.
+}
+
+
+//I can create another getMax with 2 input variables because now I am using int instead of double like I did above
+public int getMax(int a, int b){
+    return (int) getMax((double) a, (double) b); //convert 'a' and 'b' to doubles, run the above function, then convert back to int
+}
+public int getMax(int a, int b, int c){
+    //I could do what I did above with the 2 getMax calls, but I can also just imeplement an isolated solution here with no function calls 
+    if(a > b && a > c) return a;
+    else if(b > a && b > c) return b;
+    else return c; 
+    //If I did else if(c > a && c > b), then there is a possibility that the function wont return anything (when a=b=c), so Java wont like that.
+    //At the very least, we have to do: else{ return(some_answer)} or just return(some_naswer) after the if-statement 
+    //The function not returning anything when a=b or b=c or c=a is a bug, but I'll leave it in and see if you want to try and fix that bug
+}
+            </code></pre>
+            <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+
+            <a name="exceptions"></a>
+            <h3><u>Exceptions</u></h3>
+            <p>Exceptions get made when something unexpected happens. One of the most common exceptions is IndexOutOfBoundsException, which happens 
+                when we reference some index that doesn't exist. While you don't need to know every exception from the list below, most exceptions 
+                can be self-explanitory based off the name of the exception. I'll detail the exceptions that will likely appear on the exam, and some 
+                code that will generate that exception.
+            </p>
+            <img height=500px; src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.benchresources.net%2Fwp-content%2Fuploads%2F2017%2F02%2Fexception-hierarchy-in-java.png&f=1&nofb=1" onerror="this.onerror=null;this.src='OfflineImages/apexception.png'">
+            <ul>
+                <li>
+                    <h4>ArithmeticException</h4>
+                    <p>Commonly occurs when you divide by 0</p>
+                    <pre><code class="Java">
+int x = 5/0;
+                    </code></pre>
+                </li>
+                <li>
+                    <h4>NullPointerException</h4>
+                    <p>Commonly occurs when you don't initialize a class</p>
+                    <pre><code class="Java">
+private ArrayList&lt;Integer> arr;
+public ArrayList&lt;Integer> getArr(){
+    return arr; //will throw error when getArr() is called and arr is not initialized
+}
+                    </code></pre>
+                </li>
+                <li>
+                    <h4>ClassCastException</h4>
+                    <p>Happens when you try to upgrade to a class that extends it or into an incompatable class</p>
+                    <pre><code class="Java">
+public class Shape{...} 
+public class Square extends Shape{...} 
+public class Triangle extends Shape{...}
+public class Cube extends Square{...}
+public class HyperCube extends Cube{...}
+
+Square s = new Square();
+System.out.println((Shape)s); //Will work since we are downgrading into a class we extended
+System.out.println((Triangle)s); //Throws error because trying to convert a Square into a Triangle
+System.out.println((Cube)s); //Throws error since Cube extends Square
+System.out.println((HyperCube)s); //Throws error since HyperCube extends Cube, which extends Square
+                    </code></pre>
+                    <img src="https://i.imgur.com/Hjv6nVJ.png" onerror="this.onerror=null;this.src='OfflineImages/apshapeexample.png'">
+                </li>
+                <li>
+                    <h4>IndexOutOfBoundsException</h4>
+                    <p>Commonly occurs when you call an index that doesnt exist</p>
+                    <p>Can be ArrayIndexOutOfBounds or StringIndexOutOfBounds</p>
+                    <pre><code class="Java">
+int[] arr = new int[5];
+System.out.println(arr[-1]); //throws ArrayIndexOutOfBounds error 
+System.out.println(arr[5]);  //throws ArrayIndexOutOfBounds error
+
+String str = "Hello"
+System.out.println(str.indexOf(-1)); //throws StringIndexOutOfBounds error
+System.out.println(str.indexOf(7));  //throws StringIndexOutOfBounds error
+                    </code></pre>
+                </li>
+                <li>
+                    <h4>NumberFormatException</h4>
+                    <p>Commonly occurs when you convert a string to a number that can't be converted</p>
+                    <pre><code class="Java">
+System.out.println(Integer.parseInt("a"));      //Error: cant convert 'a' into a number unless you take the ASCII value 
+System.out.println(Integer.parseInt("4.2"));    //Error: 4.2 is a double, so it doesn't see this as an integer 
+System.out.println(Integer.parseInt(""));       //Error: nothing to parse
+                    </code></pre>
+                </li>
+            </ul>
+            <p>A way to deal with these exceptions is to do exception handling on them. Meaning we expect errors and tell the computer what to do if 
+                it sees one
+            </p>
+            <pre><code class="Java">
+try{
+    //Error generating code here 
+}catch(ErrorName errorVariableName){
+    //Code to run when an error happens
+}
+
+
+
+try{
+    Integer.parseInt("a");
+}
+catch(NumberFormatException ex){
+    System.out.println("Number format exception: " + ex); //prints out what caused the error
+}
+
+try{
+    int x = 5/0;
+}
+catch (Exception ex){ //Exception will catch all possible exceptions we will deal with
+    System.out.println("Exception happened: " + ex);
+}
+            </code></pre>
+            <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+            <a name="recursion"></a>
+            <h3><u>Recursion</u></h3>
+            <p>Recursion is typically a function calling itself to break down a problem into simplier steps. Solving a problem with recursion is not 
+                typically simple. However, recursion questions typically appear on the multiple-choice portion, so all you need to do is keep track 
+                of which variables contain what values.
+                </p>
+            <p> Recursive functions will almost always have some sort of base case. The base case is the simplest solution, so when the recursive 
+                problem breaks the problem down into smaller problems, those smaller problems will eventually need to have some answer before it 
+                can solve the problem
+            </p>
+                <pre><code class="Java">
+//Factorial is the product of all whole numbers that are less than or equal to the number in question.
+//4 Factorial is 4*3*2*1
+//8 Factorial is 8*7*6*5*4*3*2*1
+
+//So to solve this, we break it down into these definitions:
+// n! = n(n-1)! , n > 1
+// 1! = 1 
+// 0! = 1 
+//So to implement it, n! is just n times the factorial of n-1, and we just keep going until n reaches 1.
+//When n reaches 1, we know the answer to that question, then we can start calculating.
+public int factorial(int n){
+    if(n==1 || n==0){ //base case
+        return 1;
+    }
+    return(n * factorial(n-1));
+}
+
+
+//A Fibonacci sequence is where a number is equal to the sum of the 2 previous numbers in the series. The sequence is as follows:
+//0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ... 
+public int 
+public int getFib(int x){
+    if(n==0 || n==1){ //base case
+        return n; //at position 0, fib value is 0. At position 1, fib value is 1
+    }
+    return (getFib(x-1) + getFib(x-2)); //get the sum of the 2 previous numbers
+}
+                </code></pre>
+            <p>Recursion can be quite hard to understand. To find the output of a recursive function, keep track of what each variable and function 
+                returns, and when you hit a recursive function call, move a row down and write down the value for each variable until you hit the 
+                base case, in which you then calculate your answer. Creating recursive functions is another difficult task, but we will likely not 
+                need to do so for the exam.
+            </p>
+            <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+    </div>
+    <div class="divider"></div>
+
+    <div style="margin-left: 10px">
+        <a name="Class"></a>
+        <a name="basicclass"></a>
+        <h2>Classes</h2>
+        <p>Java makes abundant uses of classes. Think of classes as custom data types that have additional features and functions. Need a data type 
+           that stores x and y coordinates? Sure, it can do that. Need it to also calculate the distance from once coordinate to another? It can do that as well.
+        </p>
+        <p>Classes follow the following syntax:</p>
+        <pre><code class="Java">
+visibility [abstract] class ClassName [extends otherClassName] [implements interfaceName,otherInterfaceName,...]{..}
+        </code><code class="Plaintext">
+Where visibility = public, private, or protected
+Abstract is optional. Only put it in if they ask you to create an abstract class
+Class is the literal word: class 
+ClassName is the name of the class. By convention, we usually start with a capital letter like Main, Student, Shape, String, ArrayList, etc.
+extends is also optional. This is if you want to inherit another class's public variables and functions. You can only extend 1 class at a time
+otherClassName is the class name you want to extend. If you dont use "extends", dont fill this in 
+implements is also optional. This serves as sort of a skeleton to your class, defining what functions you need to implement. You can implement multiple interfaces 
+interfaceName must be specified when we use "implements". They are the name(s) of the interface class we want to implement.
+        </code><code class="Java">
+//Examples 
+public class Main{...}
+public abstract class Entity{...} 
+public class Pig extends Entity{...}  
+public class Calendar implements CalendarInterface{...}
+        </code></pre>
+
+        <a name="publicprivate"></a>
+        <h3><u>Public, Private, and Protected Variables and Functions</u></h3>
+        <p>A class often contains private variables and public/private functions.</p>
+        <ul>
+            <li><p>Private means the visibility of the variable or method is only available to code inside the same file/class</p></li>
+            <li><p>Protected means the visibility of the variable/method is available to code within the same folder as it, or within folders of that folder.
+                    We won't be needing to use protected for the exam, but can still appear as a MC question.</p></li>
+            <li><p>Public means the variable/method is accessable to code anywhere in your program, which given enough code and time, may eventually create naming conflicts and bug</p></li>
+        </ul> We typically keep variables private since we may use the same variable name, say "x", multiple times throughout different functions and we don't 
+            want to accidently use another class's "x" variable by accident. This follows the principle of least visibility, meaning we only allow 
+            variables/methods as little visbility as necessary. As a result, variables are seldomly public.
+        </p>
+        <p> Additionally, we typically want to verify if values are correct or not, so some sort of validation. If we have a BankAccount class, we don't 
+            just want to directly modify the balance variable, we want to validate if the transaction that modifies the balance is correct, as well as to 
+            make sure the user does not go into the negatives. Because of this, we use functions (setters) to modify variables to ensure we can validate 
+            the change before making it. Getters can also follow the same philosphy, we should check if we have the correct permissions to grab the variable,
+            but this is much more rare. Since we want to protect our variables from directly writing, we make them private and only accessable through 
+            setters and getters just as a convention. Occasionally we see public variables, which happens if we don't need to do any sort of validation. 
+            On the exam, some getters/setters wont need to do any validation, but we still follow the private variable convention with all variables with 
+            their respective setters and getters.
+        </p>
+        <pre><code class="Java">
+public class Shape{
+    //Field variables
+    private String name;
+    private int sides;
+
+    //Getters 
+    private String getName(){ //note that since we have to return the name, the name is of type: String so we have to put "String" here. We also don't need any input
+        return name;
+    }
+    private int getSides(){ //We are returning the int: sides. No input needed 
+        return sides; 
+    }
+
+    //Setters 
+    private void setName(String newName){ //We don't need to return anything, maybe a boolean to say if it was successful or not, but we have to take in what new name to set it to, so "String newName" is manditory
+        if(newName.length() == 0) return; //If nothing, probably accident so don't change it 
+        name = newName; //set current name to new name
+    }
+    //Note that we don't have a setSides. If we have a shape, usually the sides stay the same. If we need a new shape, we create one. This prevents accidents 
+    //that can set the sides of a Sqare to 5. Essentially, we shouldn't need to change the sides 
+}
+        </code></pre>
+        <p>Another thing to add is we usually only declare variables, we don't initialize them. This is because we may have different default values we 
+            may want to set later on depending on the case, and defining a value for a variable may confuse other programmers about what that variable 
+            should represent. This is more of a convention rather than a rule to avoid initializing class variables with values, and you are not obligated 
+            to follow it. The only time you are encouraged to define a default value for a class variable is if it is a static variable, which we will discuss
+            later on what it does. Most primitives already have some default value, but other class data types such as ArrayList will have a null default value,
+            so you should define it in the constructor or wherever you defined the class. 
+        </p><pre><code class="Java">
+public class Test{
+    //Field variables
+    private ArrayList&lt;Object> testObj; //declaration. Value is null. This is what we usually do
+    private ArrayList&lt;Object> testObj2 = new ArrayList<>(); //declaration and initialization. Value points towards an ArrayList.
+
+    public Test(){
+        testObj = new ArrayList<>(); //We must do this so the value won't be null
+        testObj2 = new ArrayList<>(); //Not needed since we already defined it above
+    }
+}
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        <a name="constructor"></a>
+        <h3><u>Constructors</u></h3>
+        <p>Constructors are a special [optional] function in a class that is the first function that runs when we create the class. In example, when we 
+            do <span class="inlinecode">ArrayList&lt;Integer> arr = new ArrayList<>();</span>, the creation of that ArrayList will run the constructor 
+            and initialize variables for us, such as array size, datatypes, memory allocation, etc.
+        </p>
+        <p>We don't always need to create a constructor for each class, but on the exam we most likely will need to for every question that asks for one 
+            or if the class contains any variables.
+        </p>
+        <p>Constructors are always public and are typically used to initialize field variables. Since they are usually declared but not yet defined, we want to 
+            set a value to them so we don't get unexpected errors.
+        </p>
+        <pre><code class="Java">
+public class Test{
+    //Field variables
+    private ArrayList&lt;Object> testObj; //declaration. Value is null. This is what we usually do
+    private String name;
+
+    public Test(String className){
+        testObj = new ArrayList<>(); //We must do this so the value won't be null
+        name = className //set it to whatever value is specified when we create this class
+    }
+}
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        <a name="static"></a>
+        <h3><u>Static</u></h3>
+        <p>Think back to our "classes are like custom data types" analogy. When we want to create a new variable, say of type: int, we create a 
+            copy of the int framework (how to handle the data, where to store it in memory, how to represent that data in binary, etc.) and uses 
+            that to create our variable. That is called creating an instance. A more practical examples is ArrayList. When we create an ArrayList, 
+            we create a copy of the template for ArrayList and use it to create our own dynamic array. If we just work off the master template, then 
+            every ArrayList we create will work in the same spot in memory and overwrite each other and crash the program. This is why in many cases, 
+            we create copies of something so we can manipulate each instance differently.
+        </p>
+        <p>Sometimes, we do actually want all of these copies to use the same variable or reference the same spot in memory. Sometimes, we want to 
+            change a variable for one of the copies and it to be modified on all copies of the class. This is what "static" is for. Static means that 
+            every copy of a class will share the same value/function. This means only 1 copy of this variable can exist. Static variables and methods 
+            are often used to keep track of how many total copies there are, or to modify or set the state of every instance. Here are some examples.
+        </p>
+        <pre><code class="Java">
+//When we set the car ID to an incremeneting static variable, we will never have the same Car ID for any 2 cars 
+//since the ID is based off the total number of cars created
+public class Car{
+    //Field Variables
+    private static int totalCars = 0;
+    private int carID;
+
+    public Car(){
+        cardID = totalCars; //set ID# to # of cars that exist 
+        totalCars++;
+    }
+}
+
+
+//If we have a robot and something goes wrong, we can either stop a single bot, or stop the entire line of robots.
+//If we only need to stop one robot, then we can stop only that robot with a normal function 
+//If we want to stop all robots that perform the same function since we discovered a dangerous bug, then we can use a static variable to reference every bot
+//   so we can shut them all down in 1 go, without going through each robot indivually and shutting them down, and possibly missing a unaccounted robot
+public class Robot(){
+    //Field variables
+    private static boolean emergencyStop = false;
+    private boolean stopSelf = false;
+
+    public static void stopAll(){ //we must put static here if we want to access a static variable
+        emergencyStop = true;
+    }
+    public void stop(){
+        stopSelf = true;
+    }
+    public void doWork(){
+        //Assume this can run without stopping code execution. This is done using threads and asynchronous functions, but thats outside of the AP CS scope
+        while true{ 
+            if(emergencyStop || stopSelf) break;
+            System.out.println("Beep boop");
+        }
+    }
+}
+        </code></pre>
+        <p>Note that we can only reference static variables within the constructor or functions with "static". Those are the only times you need 
+            to slap static onto a function. If you dont need to reference a static variable, you shouldn't need to put static on a method.
+            If you reference a static variable in a method, then you have to put static in the function name or else it won't work. The only 
+            exception for this is the constructor, which will work without the static prefix.
+        </p>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        <a name="this"></a>
+        <h3><u>This.</u></h3>
+        <p>The <span class="inlinecode">this.</span> keyword seems to be a bit confusing for most people. The <span class="inlinecode">this.</span> prefix is used to specify whether 
+            we are referring to a field variable or a local variable when there is a variable name conflict. That may sound quite confusing, but a programmer 
+            can avoid the use of <span class="inlinecode">this.</span> altogether if there is no naming conflicts. An example is as below
+        </p>
+        <pre><code class="Java">
+//use case of the "this." prefix
+public class Test(){
+    //Field variables
+    private int number; //If we use "this.number", we are referring to this variable here 
+    public Test(int number){  //If we use "number", we are referring to this variable here. This is the parameter variable, meaning it was defined locally
+        this.number = number; 
+    }
+}
+
+//However, we can avoid using "this." altogether 
+public class Test(){
+    //Field variables
+    private int number;
+    public Test(int newNumber){ 
+        number = newNumber;  //no naming conflicts between the field variable "number" and the parameter variable "newNumber"
+    }
+}
+
+//The use of "this." is used not just for arguments, but any time we want to refer to the field variable 
+public class Test(){
+    //Field variables
+    private int number;
+    public void randomFunction(){ 
+        int number = 5; //creating a new local variable number. This is very bad practice, but still legal
+        this.number = number; //assigning the field variable to the value of the local variable
+    }
+}
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        <a name="dot"></a>
+        <h3><u>The '.'</u></h3>
+        <p>The '.' character is used to reference a property of a class. That is, when we have a non-primitive variable, say an ArrayList, when we 
+            call the ArrayList, we get a whole bunch of properties (mostly functions) such as size(), set(), get(), remove(), etc. Many objects in 
+            Java have many properties that include functions and variables. The way we specify which one we want is with a '.', followed by the public 
+            (or protected if in the same folder) variable/function name 
+        </p>
+        <pre><code class="Java">
+public class Example{
+    public int x;
+    public int y;
+    private int foo;
+    public void runExample(){
+        System.out.println("Hello");
+    }
+    public void launchNukes(int launchCode){
+        if(launchCode == 1234){
+            System.out.println("Nuke launched");
+        }else{
+            System.out.println("Incorrect launch codes");
+        }
+    }
+}
+
+//In another class:
+public class Main{
+    public static void main(String[] args){
+        Example example = new Example();
+
+        //From the Example class, what is the value of the 'x' variable?
+        System.out.println(example.x);
+
+        //From the Example class, what is the value of the 'y' variable?
+        System.out.println(example.y);
+
+        //From the Example class, what is the value of the 'foo' variable?
+        System.out.println(example.foo); //Errors out since foo is private, so we can not access it
+
+        //From the Example class, run the runExample() function
+        example.runExample(); //prints out "Hello"
+
+        //From the Example class, run the launchNukes() function
+        example.launchNukes(1111); //prints out "Incorrect launch codes"
+    }
+}
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        
+        
+        <a name="override"></a>
+        <h3><u>Overriding Functions</u></h3>
+        <p>Java has a few functions that are invisibly created on every class we create. The most commonly used function is the 
+            <span class="inlinecode">public String toString()</span> function, which is overwritten the most. By default, Java makes this 
+            function print out the class name and where in memory it is stored at. In most cases, this is absolutely garbage and useless.
+            We append the <span class="inlinecode">@Override</span> before the function to say that we are changing how the function works 
+            with a new implementation.
+        </p>
+        <pre><code class="Java">
+public class TestNoOverride{} 
+public class TestOverride{
+    @Override
+    public String toString(){
+        return("Overwritten")
+    }
+}
+
+public class Main{
+    public static void main(String[] args){
+        TestNoOverride t1 = new TestNoOverride();
+        TestOverride t2 = new TestOverride();
+        //When call just "t1" or "t2", the .toString() is automatically called 
+        System.out.println(t1); //TestNoOverride@568db2f2  - Prints class name and memory address by default
+        System.out.println(t2); //Overwritten              - Changed functionality to print "Overwritten" instead
+    }
+}
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+    </div>
+    <div class="divider"></div>
+
+    <div style="margin-left: 10px">
+        <a name="Poly"></a>
+        <h2>Inheritence and Polymophism</h2>
+        <p>A big bunch of complicated words that is simplier than it might sound. Inheritance refers to inheriting classes, and thus 
+            their public functions and constructors. Polymorphism is a much bigger word, but it refers to a class or method having 
+            different forms/implementations. The vocabulary here is not very relevant to know for the exam.
+        </p>
+        <a name="extend"></a>
+        <h3><u>Extends</u></h3>
+        <p>From what you may recall above, extends is a keyword we can add to the end of a regular class to inherit all the public functions 
+            and create more specialized functions. In a way, it can be seen like an update, where we can update a class with more specialized 
+            feautres for a more specific purpose. This also allows for a framework for multiple classes to build off of. 
+        </p>
+        <p>In example, we can create a School class, and can create, say, an ElementrySchool class that extends upon that, and a SecondarySchool 
+            class that extends the School class as well. Both schools can have the same properties such as school name, studentList, staffDirectory, 
+            classrooms, etc. But elementry schools may have something like grade1Teachers, grade2Teachers, etc. Whereas the SecondarySchool 
+            class will have ChemistryTeachers, MathTeachers, HonourRollStudents, GraduationRequirements, etc. Essentially we add all the common 
+            properties of ElementrySchool and SecondarySchool and shove them into School, then any differences between the two we just add 
+            seperately. This helps us since we dont need to re-add field variables that keep track of the common properties each time 
+            we need a new school type, like maybe College, MiddleSchool, PreSchool, etc, and instead we can just inherit the School class 
+            so we get all those properties without needing to reimplement them each time.
+        </p>
+        <pre><code class="Java">
+public class School{
+    private ArrayList&lt;String> students; 
+    private int[] grades;
+    private String name;
+
+    public String getName(){
+        return name;
+    }
+    public ArrayList&lt;String> getStudents(){
+        return students;
+    }
+    public int[] getGrades(){
+        return grades;
+    }
+    public int getNumberOfStudents(){
+        return students.size();
+    }
+    public void addStudent(String student){
+        students.add(student);
+    }
+    @Override 
+    public String toString(){
+        return (getName() + " School");
+    }
+}
+
+public class SecondarySchool extends School{
+    private ArrayList&lt;String> honourRollStudents;
+    private ArrayList&lt;String> principalListStudents;
+
+    public boolean isHonourRollStudent(String student){
+        if(getStudents().indexOf(student) == -1){ //get the students that are stored in the School class. Since it's private, we have to use getStudents()
+            System.out.println("Error: Student not in student directory");
+            return false;
+        }
+        if(honourRollStudents.indexOf(student)==-1){
+            return false; //student not in honour roll list
+        }else{
+            return true; //student was found in the honour roll list
+        }
+    }
+
+    @Override 
+    public String toString(){
+        return (getName() + " Secondary School");
+    }
+}
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        <a name="super"></a>
+        <h3><u>Super</u></h3>
+        <p>Super is the keyword to reference the inherited class. If we want to refer to any function or variable in the inherited class, we 
+            can use the super prefix to do so. This isn't manditory to use if there are no naming conflicts, since in the example above, you 
+            see I used getStudents(), which is a part of the School class I inherited, without the <span class="inlinecode">super.</span> prefix
+            The <span class="inlinecode">super.</span> prefix is only necessary in 2 cases:
+            <ul>
+                <li>When we are calling the constructor of the inherited class
+                    <ul>
+                        When calling the constructor using <span class="inlinecode">super()</span>, it must be the first line of code in the new constructor
+                    </ul>
+                </li>
+                <li>When there are 2 functions/variables with the same name. Meaning the current class function/variable and the inherited class
+                    function/variable share the same name</li>
+            </ul>
+        </p>
+        <pre><code class="Java">
+public class Test{
+    private int number;
+    public int publicNumber;
+
+    public Test(){
+        number = 5;
+    }
+    public Test(int number){ //Overloaded constructor
+        this.number = number;
+    }
+    public int getNumber(){
+        return number;
+    }
+    public void setNumber(int num){
+        number = num;
+    }
+}
+
+public class Foo extends Test{
+    //Field variable
+    private int number;
+
+    public Foo(){
+        super(); //Must be on the first line. Calls the constructor that takes no input parameters
+        number = 6; //note that there is "number" in Test, and a "number" in Foo. Since "number" in Test is private, there is no conflict, so we're referencing the Foo "number" here
+    }
+    public Foo(int number){
+        super(number); //Calling the overloaded constructor since that constructor takes a single integer input as a parameter 
+        this.number = number; //Have to use "this." here since I have a field variable "number", and a parameter variable "number"
+    }
+    public void setNumber(int num){ //This function will take precedence over test() in the Test class
+        number = num;
+    }
+    public void setBothNumbers(int number){
+        super.setNumber(number); //sets the value in the Test class
+        setNumber(number); //sets the value in the Foo class
+    }
+}
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        <a name="abstract"></a>
+        <h3><u>Abstract</u></h3>
+        <p>Abstract is another word for "To implement later". I also say it can be repalced with "incomplete" to make it sound more English.
+        </p>
+        <p>Abstract is a way of defining a function that has no body yet. Meaning there is no code after the function telling it what to 
+            do or how to process any input or create any output; it just ends with a semicolon. The usage of abstract is purely for structure, 
+            and you can avoid using it altogether. If you ever see an abstract function in a class and you extend that class, you must either implement 
+            that function, or leave it defined as abstract in your new class. 
+        </p>
+        <p>Any class that has 1 or more abstract functions must be abstract. Essentially if you have an incomplete function, you can not have 
+            a complete class. In the AP exam, you may need to use this, sometimes you may not need to. If they ask you to make a class/function 
+            abstract, then you make it abstract. Otherwise, make a regular class.
+        </p>
+        <pre><code class="Java">
+public abstract class Animal{ //since we have getSound() as abstract, this class must be abstract
+    private String name;
+    private int legs;
+
+    public abstract String getSound();
+    
+    public Animal(){}
+    public Animal(String name, int legs){
+        this.name = name;
+        this.legs = legs;
+    }
+    public int getLegs(){
+        return legs;
+    }
+    public String getName(){
+        return name;
+    }
+}
+
+public class Dog extends Animal{
+    private String breed;
+    public Dog(){
+        super();
+    }
+    public Dog(String name){
+        super(name, 4);
+    }
+    public Dog(String name, String breed){
+        super(name, 4);
+        this.breed = breed;
+    }
+    public String getSound(){ //remember, since this is abstract in Animal, we must implement it here
+        return("Woof");
+    }
+    public String getBreed(){
+        return breed;
+    }
+}
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        <a name="interface"></a>
+        <h3><u>Interface and Implements</u></h3>
+        <p>Interfaces are another one of those structure things that you can go without ever using. These are just for structure, and exist 
+            to enforce good programming practices. 
+        </p>
+        <p>An interface is not a class, but rather a skeleton of a class. It only defines methods and variables with a set value in a class. 
+            In a way, it is like an abstract class, except every function is abstract and you declare variables, you must also initialize them. 
+            You also can not declare the constructors either. 
+        </p>
+        <p>To use an interface, we put "implements" after the class name or "extends otherClassName" if it exists. We can implement multiple 
+            interfaces, unlike extends/inheritance which only allows us to extend 1 class. To implement multiple interfaces, we put the names 
+            of the itnerfaces seperated by commas
+        </p>
+        <pre><code class="Java">
+public interface AnimalInterface{
+    public abstract String getSound();
+    public int getLegs();
+    public String getName();
+}
+public abstract class Animal implements AnimalInterface{
+    private String name;
+    private int legs;
+
+    public abstract String getSound();
+    
+    public Animal(){}
+    public Animal(String name, int legs){
+        this.name = name;
+        this.legs = legs;
+    }
+    public int getLegs(){return legs;}
+    public String getName(){return name;}
+}
+
+
+public interface DogInterface{
+    public String getBreed();
+}
+public class Dog extends Animal implements DogInterface, AnimalInterface{ //We already implemented AnimalInterface in the Animal class, so we dont need to implement any more functions from AnimalInterface
+    private String breed;
+    public Dog(){
+        super();
+    }
+    public Dog(String name){
+        super(name, 4);
+    }
+    public Dog(String name, String breed){
+        super(name, 4);
+        this.breed = breed;
+    }
+    public String getSound(){
+        return("Woof");
+    }
+    public String getBreed(){
+        return breed;
+    }
+}
+
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+    </div>
+    <div class="divider"></div>
+
+    <div style="margin-left: 10px">
+        <a name="Others"></a>
+        <h2>Other stuff</h2>
+        <a name="binary"></a>
+        <h3><u>Binary</u></h3>
+        <p>Binary is what computers use to do stuff. We call this Base-2 since there are only ever 2 states for a single digit: 0 or 1.
+            In contrast, we use a base-10 system: 0,1,2,3,4,5,6,7,8,9 , where there are 10 states for a single digit before we move on to 
+            the next digit.
+        </p>
+        <p>To avoid confusion between the two, a "0b" prefix is typically added to tell us that this is a binary number. "0d" is the prefix 
+            for our decimal (base 10) system, but we assume no prefix is base 10.
+        </p>
+        <p>To count in binary, it's quite simple. Every time you need to count past 1, loop back to 0 and add 1 to the left.</p>
+        <pre><code class="Plaintext">
+Decimal         Binary
+     0              0
+     1              1
+     2             10
+     3             11
+     4            100
+     5            101
+     6            110
+     7            111
+     8           1000
+     9           1001
+    10           1010
+    11           1011
+    12           1100
+    13           1101
+    14           1110
+    15           1111
+    16          10000
+        </code></pre>
+        <h4>Converting from Binary to Decimal</h4>
+        <p>This one is quite math heavy, and requires you to know how to multiply by 2 well</p>
+        <p>Essentially when we see a '1', we take 2 to the power of the position of that digit, then add them all up</p>
+        <pre><code class="Plaintext">
+Binary:     0b      1       0       1       1       0       1       0       1
+pos (power)         7       6       5       4       3       2       1       0
+Binary# * 2^pos     128     0       32      16      0       4       0       1
+                    _________________________________________________________
+                                                                    =     181 (in decimal )
+        </code></pre>       
+        <p>Note the position starts at 0 starting at the right-most digit counting left</p>
+        <p>How this works is similar to how it works in decimal</p>
+        <pre><code class="Plaintext">
+decimal:     0d     9       4       6       1       1
+pos (power)         4       3       2       1       0
+dec# * 10^pos       90000   4000    600     10      1
+                    __________________________________
+                                          =     94611
+        </code></pre>  
+        <h4>Converting from Decimal to binary</h4>
+        <p>This one is quite difficult, and involves some trial and error. The thing to do here is keep subtracting powers of 2 
+            until you reach 0. If the number you subtract results in an answer &lt; 0, then you put a 0 in that digit. If its > 0, 
+            then you put a 1 in that digit. Essentially we do what we did to convert from binary, but in reverse
+        </p>
+        <pre><code class="Plaintext">
+Decimal Num:                            232     104     50      18      2       2       2       0
+Binary Digit (in decimal [2^pos])       128     64      32      16      8       4       2       1
+New num if we can subtract              104     50      18      2       2       2       0       0
+
+1 if we subtracted, 0 otherwise         1       1       1       1       0       0       1       0
+Binary value:                       0b  1       1       1       1       0       0       1       0
+                                    _____________________________________________________________
+                                  = 0b11110010
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+       <br>
+        <a name="hexadecimal"></a>
+        <h3><u>Hexadecimal</u></h3>
+        <p>Hexadecimal is used to better represent binary. We call this Base-16 since there are 16 states for a single digit: 0123456789ABCDEF.
+            In contrast, we use a base-10 system: 0123456789, where there are 10 states for a single digit before we move on to 
+            the next digit. Each hexadecimal digit can represent 4 binary digits, so a byte (8 bits of binary) can be represented by 2 digits 
+            of hex.
+        </p>
+        <p>To avoid confusion between the two, a "0x" prefix is typically added to tell us that this is a binary number. "0d" is the prefix 
+            for our decimal (base 10) system, but we assume no prefix is base 10.
+        </p>
+        <p>To count in hexadecimal, every time you need to count past 9, start moving up the alphabet from A to F.</p>
+        <pre><code class="Plaintext">
+Decimal         Hex
+    0            0
+    1            1
+    2            2 
+    3            3
+    4            4
+    5            5
+    6            6
+    7            7
+    8            8
+    9            9
+    10           A
+    11           B
+    12           C
+    13           D
+    14           E
+    15           F
+    16          10
+        </code></pre>
+        <h4>Converting from Hex to Decimal</h4>
+        <p>This one is math heavy. All you should need to know for the exam is 16, 256, and 4096.</p>
+        <p>Essentially when we see a '1', we take 2 to the power of the position of that digit, then add them all up</p>
+        <p>On the exam, you would proabbly be given 2 digits maximum to avoid really big numbers</p>
+        <pre><code class="Plaintext">
+Hex:        0x      1       E       3       A
+pos (power)         3       2       1       0   
+16^pos              4096    256     16      1
+Hex# * 16^ pos      1*4096  14*256  3*16    1*10
+Result              4096    3584    48      10
+                    ____________________
+                                =   7738 
+        </code></pre>       
+        <p>Note the position starts at 0 starting at the right-most digit counting left</p>
+        <p>How this works is similar to how it works in decimal</p>
+        <pre><code class="Plaintext">
+decimal:     0d     9       4       6       1       1
+pos (power)         4       3       2       1       0
+dec# * 10^pos       90000   4000    600     10      1
+                    __________________________________
+                                            =     94611
+        </code></pre>  
+        <h4>Converting from Decimal to Hex</h4>
+        <p>This one is quite difficult, and involves some trial and error. You need to find how many times a number 
+            can divide into the original number, then work down.
+        </p>
+        <pre><code class="Plaintext">
+    Decimal Num:                            5232    1136    112     0      
+    Hex (in decimal [16^pos])               4096    256     16      1
+    # of times we can divide                1       4       7       0
+    New val after we subtract               1136    112     0       0
+    (Decimal# - divide*Hex)
+
+    Hex value:                          0x  1       4       7       0
+                                        _____________________
+                                        = 0x1470
+        </code></pre>      
+        
+        <h4>Converting from Hex to Binary and Binary to Hex</h4>
+        <p>This one is the easiest</p>
+        <p>Create a table and replace each one with the corresponding value</p>
+        <pre><code class="Plaintext">
+Hex     Binary
+0            0
+1            1
+2           10 
+3           11
+4          100
+5          101
+6          110
+7          111
+8         1000
+9         1001
+A         1010
+B         1011
+C         1100
+D         1101
+E         1110
+F         1111
+
+Hex:    0x  5       E       A       2
+Bin:    0b  0101    1110    1010    0010
+            ____________________________ 
+        =   0b0101111010100010
+
+
+Bin:    0b  0010    1111    0001    1101
+Hex:    0x     2       F       1       D  
+            ____________________________ 
+        =   0x2F1D
+        </code></pre>       
+    </div>
+    <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+
+        
+
+</body>
+
+<script>
+    /*
+  Highlight.js 10.7.1 (421b23b0)
+  License: BSD-3-Clause
+  Copyright (c) 2006-2021, Ivan Sagalaev
+*/
+var hljs=function(){"use strict";function e(t){
+return t instanceof Map?t.clear=t.delete=t.set=()=>{
+throw Error("map is read-only")}:t instanceof Set&&(t.add=t.clear=t.delete=()=>{
+throw Error("set is read-only")
+}),Object.freeze(t),Object.getOwnPropertyNames(t).forEach((n=>{var i=t[n]
+;"object"!=typeof i||Object.isFrozen(i)||e(i)})),t}var t=e,n=e;t.default=n
+;class i{constructor(e){
+void 0===e.data&&(e.data={}),this.data=e.data,this.isMatchIgnored=!1}
+ignoreMatch(){this.isMatchIgnored=!0}}function s(e){
+return e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#x27;")
+}function a(e,...t){const n=Object.create(null);for(const t in e)n[t]=e[t]
+;return t.forEach((e=>{for(const t in e)n[t]=e[t]})),n}const r=e=>!!e.kind
+;class l{constructor(e,t){
+this.buffer="",this.classPrefix=t.classPrefix,e.walk(this)}addText(e){
+this.buffer+=s(e)}openNode(e){if(!r(e))return;let t=e.kind
+;e.sublanguage||(t=`${this.classPrefix}${t}`),this.span(t)}closeNode(e){
+r(e)&&(this.buffer+="</span>")}value(){return this.buffer}span(e){
+this.buffer+=`<span class="${e}">`}}class o{constructor(){this.rootNode={
+children:[]},this.stack=[this.rootNode]}get top(){
+return this.stack[this.stack.length-1]}get root(){return this.rootNode}add(e){
+this.top.children.push(e)}openNode(e){const t={kind:e,children:[]}
+;this.add(t),this.stack.push(t)}closeNode(){
+if(this.stack.length>1)return this.stack.pop()}closeAllNodes(){
+for(;this.closeNode(););}toJSON(){return JSON.stringify(this.rootNode,null,4)}
+walk(e){return this.constructor._walk(e,this.rootNode)}static _walk(e,t){
+return"string"==typeof t?e.addText(t):t.children&&(e.openNode(t),
+t.children.forEach((t=>this._walk(e,t))),e.closeNode(t)),e}static _collapse(e){
+"string"!=typeof e&&e.children&&(e.children.every((e=>"string"==typeof e))?e.children=[e.children.join("")]:e.children.forEach((e=>{
+o._collapse(e)})))}}class c extends o{constructor(e){super(),this.options=e}
+addKeyword(e,t){""!==e&&(this.openNode(t),this.addText(e),this.closeNode())}
+addText(e){""!==e&&this.add(e)}addSublanguage(e,t){const n=e.root
+;n.kind=t,n.sublanguage=!0,this.add(n)}toHTML(){
+return new l(this,this.options).value()}finalize(){return!0}}function g(e){
+return e?"string"==typeof e?e:e.source:null}
+const u=/\[(?:[^\\\]]|\\.)*\]|\(\??|\\([1-9][0-9]*)|\\./,h="[a-zA-Z]\\w*",d="[a-zA-Z_]\\w*",f="\\b\\d+(\\.\\d+)?",p="(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)",m="\\b(0b[01]+)",b={
+begin:"\\\\[\\s\\S]",relevance:0},E={className:"string",begin:"'",end:"'",
+illegal:"\\n",contains:[b]},x={className:"string",begin:'"',end:'"',
+illegal:"\\n",contains:[b]},v={
+begin:/\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b/
+},w=(e,t,n={})=>{const i=a({className:"comment",begin:e,end:t,contains:[]},n)
+;return i.contains.push(v),i.contains.push({className:"doctag",
+begin:"(?:TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):",relevance:0}),i
+},y=w("//","$"),N=w("/\\*","\\*/"),R=w("#","$");var _=Object.freeze({
+__proto__:null,MATCH_NOTHING_RE:/\b\B/,IDENT_RE:h,UNDERSCORE_IDENT_RE:d,
+NUMBER_RE:f,C_NUMBER_RE:p,BINARY_NUMBER_RE:m,
+RE_STARTERS_RE:"!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|-|-=|/=|/|:|;|<<|<<=|<=|<|===|==|=|>>>=|>>=|>=|>>>|>>|>|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~",
+SHEBANG:(e={})=>{const t=/^#![ ]*\//
+;return e.binary&&(e.begin=((...e)=>e.map((e=>g(e))).join(""))(t,/.*\b/,e.binary,/\b.*/)),
+a({className:"meta",begin:t,end:/$/,relevance:0,"on:begin":(e,t)=>{
+0!==e.index&&t.ignoreMatch()}},e)},BACKSLASH_ESCAPE:b,APOS_STRING_MODE:E,
+QUOTE_STRING_MODE:x,PHRASAL_WORDS_MODE:v,COMMENT:w,C_LINE_COMMENT_MODE:y,
+C_BLOCK_COMMENT_MODE:N,HASH_COMMENT_MODE:R,NUMBER_MODE:{className:"number",
+begin:f,relevance:0},C_NUMBER_MODE:{className:"number",begin:p,relevance:0},
+BINARY_NUMBER_MODE:{className:"number",begin:m,relevance:0},CSS_NUMBER_MODE:{
+className:"number",
+begin:f+"(%|em|ex|ch|rem|vw|vh|vmin|vmax|cm|mm|in|pt|pc|px|deg|grad|rad|turn|s|ms|Hz|kHz|dpi|dpcm|dppx)?",
+relevance:0},REGEXP_MODE:{begin:/(?=\/[^/\n]*\/)/,contains:[{className:"regexp",
+begin:/\//,end:/\/[gimuy]*/,illegal:/\n/,contains:[b,{begin:/\[/,end:/\]/,
+relevance:0,contains:[b]}]}]},TITLE_MODE:{className:"title",begin:h,relevance:0
+},UNDERSCORE_TITLE_MODE:{className:"title",begin:d,relevance:0},METHOD_GUARD:{
+begin:"\\.\\s*[a-zA-Z_]\\w*",relevance:0},END_SAME_AS_BEGIN:e=>Object.assign(e,{
+"on:begin":(e,t)=>{t.data._beginMatch=e[1]},"on:end":(e,t)=>{
+t.data._beginMatch!==e[1]&&t.ignoreMatch()}})});function k(e,t){
+"."===e.input[e.index-1]&&t.ignoreMatch()}function M(e,t){
+t&&e.beginKeywords&&(e.begin="\\b("+e.beginKeywords.split(" ").join("|")+")(?!\\.)(?=\\b|\\s)",
+e.__beforeBegin=k,e.keywords=e.keywords||e.beginKeywords,delete e.beginKeywords,
+void 0===e.relevance&&(e.relevance=0))}function O(e,t){
+Array.isArray(e.illegal)&&(e.illegal=((...e)=>"("+e.map((e=>g(e))).join("|")+")")(...e.illegal))
+}function A(e,t){if(e.match){
+if(e.begin||e.end)throw Error("begin & end are not supported with match")
+;e.begin=e.match,delete e.match}}function L(e,t){
+void 0===e.relevance&&(e.relevance=1)}
+const I=["of","and","for","in","not","or","if","then","parent","list","value"]
+;function j(e,t,n="keyword"){const i={}
+;return"string"==typeof e?s(n,e.split(" ")):Array.isArray(e)?s(n,e):Object.keys(e).forEach((n=>{
+Object.assign(i,j(e[n],t,n))})),i;function s(e,n){
+t&&(n=n.map((e=>e.toLowerCase()))),n.forEach((t=>{const n=t.split("|")
+;i[n[0]]=[e,B(n[0],n[1])]}))}}function B(e,t){
+return t?Number(t):(e=>I.includes(e.toLowerCase()))(e)?0:1}
+function T(e,{plugins:t}){function n(t,n){
+return RegExp(g(t),"m"+(e.case_insensitive?"i":"")+(n?"g":""))}class i{
+constructor(){
+this.matchIndexes={},this.regexes=[],this.matchAt=1,this.position=0}
+addRule(e,t){
+t.position=this.position++,this.matchIndexes[this.matchAt]=t,this.regexes.push([t,e]),
+this.matchAt+=(e=>RegExp(e.toString()+"|").exec("").length-1)(e)+1}compile(){
+0===this.regexes.length&&(this.exec=()=>null)
+;const e=this.regexes.map((e=>e[1]));this.matcherRe=n(((e,t="|")=>{let n=0
+;return e.map((e=>{n+=1;const t=n;let i=g(e),s="";for(;i.length>0;){
+const e=u.exec(i);if(!e){s+=i;break}
+s+=i.substring(0,e.index),i=i.substring(e.index+e[0].length),
+"\\"===e[0][0]&&e[1]?s+="\\"+(Number(e[1])+t):(s+=e[0],"("===e[0]&&n++)}return s
+})).map((e=>`(${e})`)).join(t)})(e),!0),this.lastIndex=0}exec(e){
+this.matcherRe.lastIndex=this.lastIndex;const t=this.matcherRe.exec(e)
+;if(!t)return null
+;const n=t.findIndex(((e,t)=>t>0&&void 0!==e)),i=this.matchIndexes[n]
+;return t.splice(0,n),Object.assign(t,i)}}class s{constructor(){
+this.rules=[],this.multiRegexes=[],
+this.count=0,this.lastIndex=0,this.regexIndex=0}getMatcher(e){
+if(this.multiRegexes[e])return this.multiRegexes[e];const t=new i
+;return this.rules.slice(e).forEach((([e,n])=>t.addRule(e,n))),
+t.compile(),this.multiRegexes[e]=t,t}resumingScanAtSamePosition(){
+return 0!==this.regexIndex}considerAll(){this.regexIndex=0}addRule(e,t){
+this.rules.push([e,t]),"begin"===t.type&&this.count++}exec(e){
+const t=this.getMatcher(this.regexIndex);t.lastIndex=this.lastIndex
+;let n=t.exec(e)
+;if(this.resumingScanAtSamePosition())if(n&&n.index===this.lastIndex);else{
+const t=this.getMatcher(0);t.lastIndex=this.lastIndex+1,n=t.exec(e)}
+return n&&(this.regexIndex+=n.position+1,
+this.regexIndex===this.count&&this.considerAll()),n}}
+if(e.compilerExtensions||(e.compilerExtensions=[]),
+e.contains&&e.contains.includes("self"))throw Error("ERR: contains `self` is not supported at the top-level of a language.  See documentation.")
+;return e.classNameAliases=a(e.classNameAliases||{}),function t(i,r){const l=i
+;if(i.isCompiled)return l
+;[A].forEach((e=>e(i,r))),e.compilerExtensions.forEach((e=>e(i,r))),
+i.__beforeBegin=null,[M,O,L].forEach((e=>e(i,r))),i.isCompiled=!0;let o=null
+;if("object"==typeof i.keywords&&(o=i.keywords.$pattern,
+delete i.keywords.$pattern),
+i.keywords&&(i.keywords=j(i.keywords,e.case_insensitive)),
+i.lexemes&&o)throw Error("ERR: Prefer `keywords.$pattern` to `mode.lexemes`, BOTH are not allowed. (see mode reference) ")
+;return o=o||i.lexemes||/\w+/,
+l.keywordPatternRe=n(o,!0),r&&(i.begin||(i.begin=/\B|\b/),
+l.beginRe=n(i.begin),i.endSameAsBegin&&(i.end=i.begin),
+i.end||i.endsWithParent||(i.end=/\B|\b/),
+i.end&&(l.endRe=n(i.end)),l.terminatorEnd=g(i.end)||"",
+i.endsWithParent&&r.terminatorEnd&&(l.terminatorEnd+=(i.end?"|":"")+r.terminatorEnd)),
+i.illegal&&(l.illegalRe=n(i.illegal)),
+i.contains||(i.contains=[]),i.contains=[].concat(...i.contains.map((e=>(e=>(e.variants&&!e.cachedVariants&&(e.cachedVariants=e.variants.map((t=>a(e,{
+variants:null},t)))),e.cachedVariants?e.cachedVariants:S(e)?a(e,{
+starts:e.starts?a(e.starts):null
+}):Object.isFrozen(e)?a(e):e))("self"===e?i:e)))),i.contains.forEach((e=>{t(e,l)
+})),i.starts&&t(i.starts,r),l.matcher=(e=>{const t=new s
+;return e.contains.forEach((e=>t.addRule(e.begin,{rule:e,type:"begin"
+}))),e.terminatorEnd&&t.addRule(e.terminatorEnd,{type:"end"
+}),e.illegal&&t.addRule(e.illegal,{type:"illegal"}),t})(l),l}(e)}function S(e){
+return!!e&&(e.endsWithParent||S(e.starts))}function P(e){const t={
+props:["language","code","autodetect"],data:()=>({detectedLanguage:"",
+unknownLanguage:!1}),computed:{className(){
+return this.unknownLanguage?"":"hljs "+this.detectedLanguage},highlighted(){
+if(!this.autoDetect&&!e.getLanguage(this.language))return console.warn(`The language "${this.language}" you specified could not be found.`),
+this.unknownLanguage=!0,s(this.code);let t={}
+;return this.autoDetect?(t=e.highlightAuto(this.code),
+this.detectedLanguage=t.language):(t=e.highlight(this.language,this.code,this.ignoreIllegals),
+this.detectedLanguage=this.language),t.value},autoDetect(){
+return!(this.language&&(e=this.autodetect,!e&&""!==e));var e},
+ignoreIllegals:()=>!0},render(e){return e("pre",{},[e("code",{
+class:this.className,domProps:{innerHTML:this.highlighted}})])}};return{
+Component:t,VuePlugin:{install(e){e.component("highlightjs",t)}}}}const D={
+"after:highlightElement":({el:e,result:t,text:n})=>{const i=H(e)
+;if(!i.length)return;const a=document.createElement("div")
+;a.innerHTML=t.value,t.value=((e,t,n)=>{let i=0,a="";const r=[];function l(){
+return e.length&&t.length?e[0].offset!==t[0].offset?e[0].offset<t[0].offset?e:t:"start"===t[0].event?e:t:e.length?e:t
+}function o(e){a+="<"+C(e)+[].map.call(e.attributes,(function(e){
+return" "+e.nodeName+'="'+s(e.value)+'"'})).join("")+">"}function c(e){
+a+="</"+C(e)+">"}function g(e){("start"===e.event?o:c)(e.node)}
+for(;e.length||t.length;){let t=l()
+;if(a+=s(n.substring(i,t[0].offset)),i=t[0].offset,t===e){r.reverse().forEach(c)
+;do{g(t.splice(0,1)[0]),t=l()}while(t===e&&t.length&&t[0].offset===i)
+;r.reverse().forEach(o)
+}else"start"===t[0].event?r.push(t[0].node):r.pop(),g(t.splice(0,1)[0])}
+return a+s(n.substr(i))})(i,H(a),n)}};function C(e){
+return e.nodeName.toLowerCase()}function H(e){const t=[];return function e(n,i){
+for(let s=n.firstChild;s;s=s.nextSibling)3===s.nodeType?i+=s.nodeValue.length:1===s.nodeType&&(t.push({
+event:"start",offset:i,node:s}),i=e(s,i),C(s).match(/br|hr|img|input/)||t.push({
+event:"stop",offset:i,node:s}));return i}(e,0),t}const $=e=>{console.error(e)
+},U=(e,...t)=>{console.log("WARN: "+e,...t)},z=(e,t)=>{
+console.log(`Deprecated as of ${e}. ${t}`)},K=s,G=a,V=Symbol("nomatch")
+;return(e=>{const n=Object.create(null),s=Object.create(null),a=[];let r=!0
+;const l=/(^(<[^>]+>|\t|)+|\n)/gm,o="Could not find the language '{}', did you forget to load/include a language module?",g={
+disableAutodetect:!0,name:"Plain text",contains:[]};let u={
+noHighlightRe:/^(no-?highlight)$/i,
+languageDetectRe:/\blang(?:uage)?-([\w-]+)\b/i,classPrefix:"hljs-",
+tabReplace:null,useBR:!1,languages:null,__emitter:c};function h(e){
+return u.noHighlightRe.test(e)}function d(e,t,n,i){let s="",a=""
+;"object"==typeof t?(s=e,
+n=t.ignoreIllegals,a=t.language,i=void 0):(z("10.7.0","highlight(lang, code, ...args) has been deprecated."),
+z("10.7.0","Please use highlight(code, options) instead.\nhttps://github.com/highlightjs/highlight.js/issues/2277"),
+a=e,s=t);const r={code:s,language:a};M("before:highlight",r)
+;const l=r.result?r.result:f(r.language,r.code,n,i)
+;return l.code=r.code,M("after:highlight",l),l}function f(e,t,s,l){
+function c(e,t){const n=v.case_insensitive?t[0].toLowerCase():t[0]
+;return Object.prototype.hasOwnProperty.call(e.keywords,n)&&e.keywords[n]}
+function g(){null!=R.subLanguage?(()=>{if(""===M)return;let e=null
+;if("string"==typeof R.subLanguage){
+if(!n[R.subLanguage])return void k.addText(M)
+;e=f(R.subLanguage,M,!0,_[R.subLanguage]),_[R.subLanguage]=e.top
+}else e=p(M,R.subLanguage.length?R.subLanguage:null)
+;R.relevance>0&&(O+=e.relevance),k.addSublanguage(e.emitter,e.language)
+})():(()=>{if(!R.keywords)return void k.addText(M);let e=0
+;R.keywordPatternRe.lastIndex=0;let t=R.keywordPatternRe.exec(M),n="";for(;t;){
+n+=M.substring(e,t.index);const i=c(R,t);if(i){const[e,s]=i
+;if(k.addText(n),n="",O+=s,e.startsWith("_"))n+=t[0];else{
+const n=v.classNameAliases[e]||e;k.addKeyword(t[0],n)}}else n+=t[0]
+;e=R.keywordPatternRe.lastIndex,t=R.keywordPatternRe.exec(M)}
+n+=M.substr(e),k.addText(n)})(),M=""}function h(e){
+return e.className&&k.openNode(v.classNameAliases[e.className]||e.className),
+R=Object.create(e,{parent:{value:R}}),R}function d(e,t,n){let s=((e,t)=>{
+const n=e&&e.exec(t);return n&&0===n.index})(e.endRe,n);if(s){if(e["on:end"]){
+const n=new i(e);e["on:end"](t,n),n.isMatchIgnored&&(s=!1)}if(s){
+for(;e.endsParent&&e.parent;)e=e.parent;return e}}
+if(e.endsWithParent)return d(e.parent,t,n)}function m(e){
+return 0===R.matcher.regexIndex?(M+=e[0],1):(I=!0,0)}function b(e){
+const n=e[0],i=t.substr(e.index),s=d(R,e,i);if(!s)return V;const a=R
+;a.skip?M+=n:(a.returnEnd||a.excludeEnd||(M+=n),g(),a.excludeEnd&&(M=n));do{
+R.className&&k.closeNode(),R.skip||R.subLanguage||(O+=R.relevance),R=R.parent
+}while(R!==s.parent)
+;return s.starts&&(s.endSameAsBegin&&(s.starts.endRe=s.endRe),
+h(s.starts)),a.returnEnd?0:n.length}let E={};function x(n,a){const l=a&&a[0]
+;if(M+=n,null==l)return g(),0
+;if("begin"===E.type&&"end"===a.type&&E.index===a.index&&""===l){
+if(M+=t.slice(a.index,a.index+1),!r){const t=Error("0 width match regex")
+;throw t.languageName=e,t.badRule=E.rule,t}return 1}
+if(E=a,"begin"===a.type)return function(e){
+const t=e[0],n=e.rule,s=new i(n),a=[n.__beforeBegin,n["on:begin"]]
+;for(const n of a)if(n&&(n(e,s),s.isMatchIgnored))return m(t)
+;return n&&n.endSameAsBegin&&(n.endRe=RegExp(t.replace(/[-/\\^$*+?.()|[\]{}]/g,"\\$&"),"m")),
+n.skip?M+=t:(n.excludeBegin&&(M+=t),
+g(),n.returnBegin||n.excludeBegin||(M=t)),h(n),n.returnBegin?0:t.length}(a)
+;if("illegal"===a.type&&!s){
+const e=Error('Illegal lexeme "'+l+'" for mode "'+(R.className||"<unnamed>")+'"')
+;throw e.mode=R,e}if("end"===a.type){const e=b(a);if(e!==V)return e}
+if("illegal"===a.type&&""===l)return 1
+;if(L>1e5&&L>3*a.index)throw Error("potential infinite loop, way more iterations than matches")
+;return M+=l,l.length}const v=N(e)
+;if(!v)throw $(o.replace("{}",e)),Error('Unknown language: "'+e+'"')
+;const w=T(v,{plugins:a});let y="",R=l||w;const _={},k=new u.__emitter(u);(()=>{
+const e=[];for(let t=R;t!==v;t=t.parent)t.className&&e.unshift(t.className)
+;e.forEach((e=>k.openNode(e)))})();let M="",O=0,A=0,L=0,I=!1;try{
+for(R.matcher.considerAll();;){
+L++,I?I=!1:R.matcher.considerAll(),R.matcher.lastIndex=A
+;const e=R.matcher.exec(t);if(!e)break;const n=x(t.substring(A,e.index),e)
+;A=e.index+n}return x(t.substr(A)),k.closeAllNodes(),k.finalize(),y=k.toHTML(),{
+relevance:Math.floor(O),value:y,language:e,illegal:!1,emitter:k,top:R}}catch(n){
+if(n.message&&n.message.includes("Illegal"))return{illegal:!0,illegalBy:{
+msg:n.message,context:t.slice(A-100,A+100),mode:n.mode},sofar:y,relevance:0,
+value:K(t),emitter:k};if(r)return{illegal:!1,relevance:0,value:K(t),emitter:k,
+language:e,top:R,errorRaised:n};throw n}}function p(e,t){
+t=t||u.languages||Object.keys(n);const i=(e=>{const t={relevance:0,
+emitter:new u.__emitter(u),value:K(e),illegal:!1,top:g}
+;return t.emitter.addText(e),t})(e),s=t.filter(N).filter(k).map((t=>f(t,e,!1)))
+;s.unshift(i);const a=s.sort(((e,t)=>{
+if(e.relevance!==t.relevance)return t.relevance-e.relevance
+;if(e.language&&t.language){if(N(e.language).supersetOf===t.language)return 1
+;if(N(t.language).supersetOf===e.language)return-1}return 0})),[r,l]=a,o=r
+;return o.second_best=l,o}const m={"before:highlightElement":({el:e})=>{
+u.useBR&&(e.innerHTML=e.innerHTML.replace(/\n/g,"").replace(/<br[ /]*>/g,"\n"))
+},"after:highlightElement":({result:e})=>{
+u.useBR&&(e.value=e.value.replace(/\n/g,"<br>"))}},b=/^(<[^>]+>|\t)+/gm,E={
+"after:highlightElement":({result:e})=>{
+u.tabReplace&&(e.value=e.value.replace(b,(e=>e.replace(/\t/g,u.tabReplace))))}}
+;function x(e){let t=null;const n=(e=>{let t=e.className+" "
+;t+=e.parentNode?e.parentNode.className:"";const n=u.languageDetectRe.exec(t)
+;if(n){const t=N(n[1])
+;return t||(U(o.replace("{}",n[1])),U("Falling back to no-highlight mode for this block.",e)),
+t?n[1]:"no-highlight"}return t.split(/\s+/).find((e=>h(e)||N(e)))})(e)
+;if(h(n))return;M("before:highlightElement",{el:e,language:n}),t=e
+;const i=t.textContent,a=n?d(i,{language:n,ignoreIllegals:!0}):p(i)
+;M("after:highlightElement",{el:e,result:a,text:i
+}),e.innerHTML=a.value,((e,t,n)=>{const i=t?s[t]:n
+;e.classList.add("hljs"),i&&e.classList.add(i)})(e,n,a.language),e.result={
+language:a.language,re:a.relevance,relavance:a.relevance
+},a.second_best&&(e.second_best={language:a.second_best.language,
+re:a.second_best.relevance,relavance:a.second_best.relevance})}const v=()=>{
+v.called||(v.called=!0,
+z("10.6.0","initHighlighting() is deprecated.  Use highlightAll() instead."),
+document.querySelectorAll("pre code").forEach(x))};let w=!1;function y(){
+"loading"!==document.readyState?document.querySelectorAll("pre code").forEach(x):w=!0
+}function N(e){return e=(e||"").toLowerCase(),n[e]||n[s[e]]}
+function R(e,{languageName:t}){"string"==typeof e&&(e=[e]),e.forEach((e=>{
+s[e.toLowerCase()]=t}))}function k(e){const t=N(e)
+;return t&&!t.disableAutodetect}function M(e,t){const n=e;a.forEach((e=>{
+e[n]&&e[n](t)}))}
+"undefined"!=typeof window&&window.addEventListener&&window.addEventListener("DOMContentLoaded",(()=>{
+w&&y()}),!1),Object.assign(e,{highlight:d,highlightAuto:p,highlightAll:y,
+fixMarkup:e=>{
+return z("10.2.0","fixMarkup will be removed entirely in v11.0"),z("10.2.0","Please see https://github.com/highlightjs/highlight.js/issues/2534"),
+t=e,
+u.tabReplace||u.useBR?t.replace(l,(e=>"\n"===e?u.useBR?"<br>":e:u.tabReplace?e.replace(/\t/g,u.tabReplace):e)):t
+;var t},highlightElement:x,
+highlightBlock:e=>(z("10.7.0","highlightBlock will be removed entirely in v12.0"),
+z("10.7.0","Please use highlightElement now."),x(e)),configure:e=>{
+e.useBR&&(z("10.3.0","'useBR' will be removed entirely in v11.0"),
+z("10.3.0","Please see https://github.com/highlightjs/highlight.js/issues/2559")),
+u=G(u,e)},initHighlighting:v,initHighlightingOnLoad:()=>{
+z("10.6.0","initHighlightingOnLoad() is deprecated.  Use highlightAll() instead."),
+w=!0},registerLanguage:(t,i)=>{let s=null;try{s=i(e)}catch(e){
+if($("Language definition for '{}' could not be registered.".replace("{}",t)),
+!r)throw e;$(e),s=g}
+s.name||(s.name=t),n[t]=s,s.rawDefinition=i.bind(null,e),s.aliases&&R(s.aliases,{
+languageName:t})},unregisterLanguage:e=>{delete n[e]
+;for(const t of Object.keys(s))s[t]===e&&delete s[t]},
+listLanguages:()=>Object.keys(n),getLanguage:N,registerAliases:R,
+requireLanguage:e=>{
+z("10.4.0","requireLanguage will be removed entirely in v11."),
+z("10.4.0","Please see https://github.com/highlightjs/highlight.js/pull/2844")
+;const t=N(e);if(t)return t
+;throw Error("The '{}' language is required, but not loaded.".replace("{}",e))},
+autoDetection:k,inherit:G,addPlugin:e=>{(e=>{
+e["before:highlightBlock"]&&!e["before:highlightElement"]&&(e["before:highlightElement"]=t=>{
+e["before:highlightBlock"](Object.assign({block:t.el},t))
+}),e["after:highlightBlock"]&&!e["after:highlightElement"]&&(e["after:highlightElement"]=t=>{
+e["after:highlightBlock"](Object.assign({block:t.el},t))})})(e),a.push(e)},
+vuePlugin:P(e).VuePlugin}),e.debugMode=()=>{r=!1},e.safeMode=()=>{r=!0
+},e.versionString="10.7.1";for(const e in _)"object"==typeof _[e]&&t(_[e])
+;return Object.assign(e,_),e.addPlugin(m),e.addPlugin(D),e.addPlugin(E),e})({})
+}();"object"==typeof exports&&"undefined"!=typeof module&&(module.exports=hljs);
+
+hljs.registerLanguage("java",(()=>{"use strict"
+;var e="\\.([0-9](_*[0-9])*)",n="[0-9a-fA-F](_*[0-9a-fA-F])*",a={
+className:"number",variants:[{
+begin:`(\\b([0-9](_*[0-9])*)((${e})|\\.)?|(${e}))[eE][+-]?([0-9](_*[0-9])*)[fFdD]?\\b`
+},{begin:`\\b([0-9](_*[0-9])*)((${e})[fFdD]?\\b|\\.([fFdD]\\b)?)`},{
+begin:`(${e})[fFdD]?\\b`},{begin:"\\b([0-9](_*[0-9])*)[fFdD]\\b"},{
+begin:`\\b0[xX]((${n})\\.?|(${n})?\\.(${n}))[pP][+-]?([0-9](_*[0-9])*)[fFdD]?\\b`
+},{begin:"\\b(0|[1-9](_*[0-9])*)[lL]?\\b"},{begin:`\\b0[xX](${n})[lL]?\\b`},{
+begin:"\\b0(_*[0-7])*[lL]?\\b"},{begin:"\\b0[bB][01](_*[01])*[lL]?\\b"}],
+relevance:0};return e=>{
+var n="false synchronized int abstract float private char boolean var static null if const for true while long strictfp finally protected import native final void enum else break transient catch instanceof byte super volatile case assert short package default double public try this switch continue throws protected public private module requires exports do",s={
+className:"meta",begin:"@[\xc0-\u02b8a-zA-Z_$][\xc0-\u02b8a-zA-Z_$0-9]*",
+contains:[{begin:/\(/,end:/\)/,contains:["self"]}]};const r=a;return{
+name:"Java",aliases:["jsp"],keywords:n,illegal:/<\/|#/,
+contains:[e.COMMENT("/\\*\\*","\\*/",{relevance:0,contains:[{begin:/\w+@/,
+relevance:0},{className:"doctag",begin:"@[A-Za-z]+"}]}),{
+begin:/import java\.[a-z]+\./,keywords:"import",relevance:2
+},e.C_LINE_COMMENT_MODE,e.C_BLOCK_COMMENT_MODE,e.APOS_STRING_MODE,e.QUOTE_STRING_MODE,{
+className:"class",beginKeywords:"class interface enum",end:/[{;=]/,
+excludeEnd:!0,relevance:1,keywords:"class interface enum",illegal:/[:"\[\]]/,
+contains:[{beginKeywords:"extends implements"},e.UNDERSCORE_TITLE_MODE]},{
+beginKeywords:"new throw return else",relevance:0},{className:"class",
+begin:"record\\s+"+e.UNDERSCORE_IDENT_RE+"\\s*\\(",returnBegin:!0,excludeEnd:!0,
+end:/[{;=]/,keywords:n,contains:[{beginKeywords:"record"},{
+begin:e.UNDERSCORE_IDENT_RE+"\\s*\\(",returnBegin:!0,relevance:0,
+contains:[e.UNDERSCORE_TITLE_MODE]},{className:"params",begin:/\(/,end:/\)/,
+keywords:n,relevance:0,contains:[e.C_BLOCK_COMMENT_MODE]
+},e.C_LINE_COMMENT_MODE,e.C_BLOCK_COMMENT_MODE]},{className:"function",
+begin:"([\xc0-\u02b8a-zA-Z_$][\xc0-\u02b8a-zA-Z_$0-9]*(<[\xc0-\u02b8a-zA-Z_$][\xc0-\u02b8a-zA-Z_$0-9]*(\\s*,\\s*[\xc0-\u02b8a-zA-Z_$][\xc0-\u02b8a-zA-Z_$0-9]*)*>)?\\s+)+"+e.UNDERSCORE_IDENT_RE+"\\s*\\(",
+returnBegin:!0,end:/[{;=]/,excludeEnd:!0,keywords:n,contains:[{
+begin:e.UNDERSCORE_IDENT_RE+"\\s*\\(",returnBegin:!0,relevance:0,
+contains:[e.UNDERSCORE_TITLE_MODE]},{className:"params",begin:/\(/,end:/\)/,
+keywords:n,relevance:0,
+contains:[s,e.APOS_STRING_MODE,e.QUOTE_STRING_MODE,r,e.C_BLOCK_COMMENT_MODE]
+},e.C_LINE_COMMENT_MODE,e.C_BLOCK_COMMENT_MODE]},r,s]}}})());
+hljs.registerLanguage("plaintext",(()=>{"use strict";return t=>({
+name:"Plain text",aliases:["text","txt"],disableAutodetect:!0})})());
+hljs.registerLanguage("properties",(()=>{"use strict";return e=>{
+var n="[ \\t\\f]*",a=n+"[:=]"+n,t="("+a+"|[ \\t\\f]+)",r="([^\\\\\\W:= \\t\\f\\n]|\\\\.)+",s="([^\\\\:= \\t\\f\\n]|\\\\.)+",i={
+end:t,relevance:0,starts:{className:"string",end:/$/,relevance:0,contains:[{
+begin:"\\\\\\\\"},{begin:"\\\\\\n"}]}};return{name:".properties",
+case_insensitive:!0,illegal:/\S/,contains:[e.COMMENT("^\\s*[!#]","$"),{
+returnBegin:!0,variants:[{begin:r+a,relevance:1},{begin:r+"[ \\t\\f]+",
+relevance:0}],contains:[{className:"attr",begin:r,endsParent:!0,relevance:0}],
+starts:i},{begin:s+t,returnBegin:!0,relevance:0,contains:[{className:"meta",
+begin:s,endsParent:!0,relevance:0}],starts:i},{className:"attr",relevance:0,
+begin:s+n+"$"}]}}})());
+</script>
+</html>
