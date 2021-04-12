@@ -208,6 +208,17 @@ h3{
                 <ul><a href="#hexadecimal">Hexadecimal</a></ul>
             </ol>
         </ul>
+        <ul>
+            <a href="#Algo"><b>Must-know Algorithms</b></a>
+            <ol>
+                <ul><a href="#reverse">Reversing an Array</a></ul>
+                <ul><a href="#adding">Adding Elements in an Array</a></ul>
+                <ul><a href="#2darray">Navigating a 2D Array</a></ul>
+                <ul><a href="#minmax">Minimum / Maximum in Array</a></ul>
+                <ul><a href="#arrayCond">Check if Array Meets a Condition</a></ul>
+                <ul><a href="#elementExists">Check Array Contains a Specific Value</a></ul>
+            </ol>
+        </ul>
     </ol>
 
     <div class="divider"></div>
@@ -2240,8 +2251,167 @@ Hex:    0x     2       F       1       D
             ____________________________ 
         =   0x2F1D
         </code></pre>       
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
     </div>
-    <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+
+    <div class="divider"></div>
+
+    <div style="margin-left: 10px">
+        <h2><a name="Algo">Must know Algorithms</a></h2>
+        <p>A lot of these algorithms will appear on the exam. These are basic concepts you should know by heart and understand
+            how each one works. Most exam questions will us a variation of these algorithms, so do not just memorize how I do it 
+            here, but also what each line does, and why it is done like that.
+        </p>
+        <a name="reverse"></a>
+        <h3><u>Reversing an array</u></h3>
+        <pre><code class="Java">
+//Primitive Array:
+Object[] arr = ... ; //Replace Object with whatever datatype you need
+for(int i=0 ; i < arr.length/2 ; i++ ){  //I divide by 2 since I am swaping both sides at once.
+    Object tmp = arr[i];
+    arr[i] = arr[arr.length-1-i];
+    arr[arr.length-1-i] = temp;
+}
+
+//ArrayList:
+ArrayList&lt;Object> arr = ... ; //Replace Object with whatever datatype you need
+for(int i=0 ; i < arr.length/2 ; i++ ){  //I divide by 2 since I am swaping both sides at once.
+    Object tmp = arr.get(i);
+    arr.set( i ,  arr.get(arr.length-1-i) );
+    arr.set( arr.length-1-i , temp );
+}
+
+//Print in reverse, but doesn’t modify the array
+for(int i=array.length-1 ; i>=0 ; i--){
+    System.out.println(array[i]);
+}
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+
+        <a name="adding"></a>
+        <h3><u>Adding Elements in an Array</u></h3>
+        <pre><code class="Java">
+//For numbers
+int sum = 0;
+for(int i=0 ; i&lt;array.length ; i++){
+    sum += array[i];
+}
+
+//For Strings
+String ans = "";
+for(int i=0 ; i&lt;array.length ; i++){
+    ans += array[i];
+}        
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+
+        <a name="2darray"></a>
+        <h3><u>Navigate 2D Array (Doesn’t have to be a rectangular array)</u></h3>
+        <pre><code class="Java">
+for(int y=0;y&lt;array.length;y++){
+    for(int x=0;x&lt;array[y].length;y++){ //if it is rectangular, you can use array[0]
+        System.out.print(array[y][x]); //this runs for every element
+    }
+    System.out.println(); //this runs once we reach the end of each row
+}
+        
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+
+        <a name="minmax"></a>
+        <h3><u>Minimum / Maximum in Array</u></h3>
+        <pre><code class="Java">	
+//Min 
+int min=array[0]; //We assume array[0] exists
+//we can start with 1 or 0. I did 1 because we already considered array[0]
+for(int i=1 ; i&lt;array.length ; i++){	
+    if(array[i] < min){
+        min = array[i]
+    }
+}
+
+//Max
+int max=array[0]; //We assume array[0] exists
+//we can start with 1 or 0. I did 1 because we already considered array[0]
+for(int i=1 ; i&lt;array.length ; i++){	
+    if(array[i] > max){
+        max = array[i]
+    }
+}
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+
+        <a name="arrayCond"></a>
+        <h3><u>Check if Array Meets a Condition</u></h3>
+        <pre><code class="Java">
+//Check if array is strictly increasing
+for(int i=0 ; i&lt;array.length-1 ; i++){
+    if(array[i] > array[i+1]){
+        return false;
+    }
+}
+return true;
+
+//Check if array is strictly decreasing
+for(int i=0 ; i&lt;array.length-1 ; i++){
+    if(array[i] &lt; array[i+1]){
+        return false;
+    }
+}
+return true;
+
+
+
+//Check if array only contains even numbers
+for(int i=0 ; i&lt;array.length-1 ; i++){
+    if(array[i]%2 == 1){
+        return false;
+    }
+}
+return true;
+
+//Check if array contains a value
+for(int i=0 ; i&lt;array.length-1 ; i++){
+    if(array[i] == VALUE){
+        return true;
+    }
+}
+return false;
+
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+
+        <a name="elementExists"></a>
+        <h3><u>Check Array Contains a Specific Value</u></h3>
+        <pre><code class="Java">	
+//Find if int exists in the int array
+int toFind = 0;
+for(int i=0;i&lt;array.length;i++){
+    if(array[i] == toFind){
+        return i;
+    }
+}
+return -1;
+
+//Find if element exists in ArrayList
+ArrayList&lt;Object> array = new ArrayList&lt;>(); 
+return array.indexOf(toFind);
+
+//If there is a character in a string (char array)
+String word = “this is the word to scan”;
+for(int i=0;i&lt;word.length();i++){
+    if(word.charAt(i)==charToFind){
+        return i;
+    }
+}
+//If we only care about if it exists or not and we don't care about index 
+return (word.indexOf(charToFind)!=-1); //if it is not -1, it did find the character
+        
+        </code></pre>
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+
+    </div>
+        
 
         
 
