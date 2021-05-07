@@ -1527,7 +1527,6 @@ public int factorial(int n){
 
 //A Fibonacci sequence is where a number is equal to the sum of the 2 previous numbers in the series. The sequence is as follows:
 //0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ... 
-public int 
 public int getFib(int x){
     if(n==0 || n==1){ //base case
         return n; //at position 0, fib value is 0. At position 1, fib value is 1
@@ -2308,11 +2307,25 @@ for(int i=0 ; i&lt;array.length ; i++){
         <a name="2darray"></a>
         <h3><u>Navigate 2D Array (Doesn’t have to be a rectangular array)</u></h3>
         <pre><code class="Java">
+//Go through all elements
+//Note that y=row and x=col (on the exam, they will use row and column instead of y and x)
 for(int y=0;y&lt;array.length;y++){
     for(int x=0;x&lt;array[y].length;y++){ //if it is rectangular, you can use array[0]
         System.out.print(array[y][x]); //this runs for every element
     }
     System.out.println(); //this runs once we reach the end of each row
+}
+
+//Go through a row
+const int ROW = 5; //go through row 5
+for(int x=0;x<array[0].length;x++){
+    System.out.print(array[ROW][x]);
+}
+
+//Go through a column
+const int COL = 5; //go through column 5
+for(int y=0;y<array.length;x++){
+    System.out.println(array[y][COL]);
 }
         
         </code></pre>
