@@ -111,7 +111,6 @@ h3{
         });
       });</script>
 </head>
-<>
     <h1>Java Study Guide</h1>
     <h2 style="margin-left: 10px">Table of contents (Click on them to jump to that section)</h2>
     <a name="Top"></a>
@@ -651,9 +650,28 @@ final String name = "Scott Scotterson";
         <h4>Usage</h4>
         <pre><code class="Java">
 Math.random(); //In the Java quick reference sheet. Generates a random double between 0.0 to 1.0. No need for imports or classes
+
+//Generate a random integer
+final int maxValue = 10;
+int randomVal = (int) (Math.random() * maxValue);
+
+//Have an x% chance of happening:
+final double chance = 0.40; //40%
+if(Math.random() < chance){
+    System.out.println("40% chance of running");
+}else{
+    System.out.println("60% chance of failing");
+}
+
+//Generate an int between x and y inclusive [x,y] , rather than [x,y)
+final int min = 3;
+final int max = 7;
+//         minimum + random number from [0,4] in this case (4 was obtained by doing max-min)
+int ans = min + (int)(Math.random() * (max-min+1)); //the +1 is for turning [0,4) to [0,5), which is the same as [0,4] for integer values
         </code></pre>
         <br>
         <pre><code class="Java">
+//NOTE: THIS IS NOT RECOMMENDED FOR THE AP EXAM. USE Math.random() ON THE EXAM INSTEAD. THIS IS JUST FOR REFERENCE 
 Random random = new Random(); //the lowercase random is the variable name, and the capital Random is the class name
 random.nextInt(10); //generates a random integer between [0,10). So either 0,1,2,3,4,5,6,7,8, or 9. Requires the "Random random = new Random()" line
 random.nextDouble(); //generates a random double bewteen 0.0 to 1.0 
