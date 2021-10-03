@@ -137,6 +137,7 @@ h3{
                 <ul><a href="#ifsimple">Simple Statement</a></ul>
                 <ul><a href="#logic"><sb>Logical Operators</sb></a></ul>
                 <ul><a href="#combine"><sb>Combining Statements</sb></a></ul>
+                <ul><a href="#switch"><sb>Switch-Case</sb></a></ul>
                 <ul><a href="#invert">Inverting</a></ul>
             </ol>
         </ul>
@@ -856,6 +857,60 @@ if( (moveX == 2 && (moveY == 1 || moveY == -1) ) ||         //if moving 2 right 
     System.out.println("Knight move invalid");
 }       
         </code></pre>
+        
+        <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
+        <br>
+        <a name="switch"></a>
+        <h3><u>Switch-Case Statements</u></h3>
+        <p>
+            Switch-case statements are replacements for specific if,else-if,else-if,...,else-if,[else] statements. They are used to specify what to do for explicitly 
+            stated values of a variable. Switch-Case is not good for if you need to check if a variable is within a certain range. Switch-case is used for when there 
+            only need <div class="inlinecode">==</div> or <div class="inlinecode">.equals()</div> (for strings) checks.
+        </p>
+        <p>
+            Typically you would end each case with a <div class="inlinecode">break;</div> statement. This is so your code doesn't "fall through" to the next cases 
+            below. Without a <div class="inlinecode">break;</div> statement, the execution flow will keep running code below it until it either hits a break statement
+            or it hits the end of the switch{} statement, whichever is first
+        </p>
+        <h4>Usage</h4>
+        <pre><code class="Java">
+//Convert digit to english number
+switch(number){
+    case 1:
+        System.out.println("One");
+        break;
+    case 2:
+        System.out.println("Two");
+        break;
+    case 3:
+        System.out.println("Three");
+        break;
+    case 4:
+        System.out.println("Four");
+        break;
+    case 5: case 6: case 7: case 8: case 9: case 10:
+        System.out.println("Between 5-10");
+    default:
+        System.out.println("Number not found");
+}
+
+//Which is equivilant to:
+if(number == 1){
+    System.out.println("One");
+}else if(number == 2){
+    System.out.println("Two");
+}else if(number == 3){
+    System.out.println("Three");
+}else if(number == 4){
+    System.out.println("Four");
+}else if(number == 5 || number == 6 || number == 7 || number == 8 || number == 9 || number == 10){
+    System.out.println("Between 5-10");
+}else{
+    System.out.println("Number not found");
+}
+        </code></pre>
+        
+        
         <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
         <br>
         <a name="invert"></a>
