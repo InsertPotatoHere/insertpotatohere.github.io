@@ -703,6 +703,13 @@ random.nextDouble(); //generates a random double bewteen 0.0 to 1.0
             Note that the moment you create another line starting with "if", it becomes a seperate if statement, and both blocks of code inside 
             those if-statements can run.
         </p>
+        <p>
+            A lesser-known version of the if-statement is called the ternary operator. This will not appear in the exam, but may be shorter to 
+            write in specific use cases on the written portion of the exam. The ternary operator is used for assigning different values depending 
+            if the condition evaluates to true or not. You assign the value of the variable to the ternary operator, which includes a boolean statement
+            typically in parenthesis, followed by a question mark (?), the value if the boolean evaluates to true, a colon (:), then the value if
+            the boolean evaluates to false.
+        </p>
         <h4>Usage</h4>
         <pre><code class="Java">
 if(boolean_Statement){
@@ -739,6 +746,17 @@ if(boolean1){
 }
 if(boolean2){
     //code here will run if boolean2 is true. It doesnt care whether boolean1 is true or not
+}
+        </code></pre>
+        <pre><code class="Java">
+//Ternary if-statement
+String ans = (boolean1) ? "True value" : "False value";
+//Same as
+String ans;
+if(boolean1){
+    ans = "True value";
+}else{
+    ans = "False value";
 }
         </code></pre>
         <h5 style="text-align: left;"><a href="#top"><u style="color:#FFF !important;">Jump back to table of contents</u></a></h5>
